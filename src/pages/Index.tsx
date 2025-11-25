@@ -6,65 +6,65 @@ import { Badge } from "@/components/ui/badge";
 const courses = [
   {
     id: "1",
-    title: "Développement Web Moderne",
-    description: "Maîtrisez React, TypeScript et les dernières technologies web pour créer des applications modernes et performantes.",
-    duration: "12 semaines",
+    title: "ג'ל ולק ג'ל",
+    description: "למדי את כל הטכניקות המתקדמות של ג'ל ולק ג'ל. קורס מקצועי ומקיף לבניית קריירה מוצלחת.",
+    duration: "6 שבועות",
     students: 1234,
-    level: "Intermédiaire",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop",
+    level: "מתחילים",
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=400&fit=crop",
   },
   {
     id: "2",
-    title: "Design UI/UX Avancé",
-    description: "Apprenez à créer des interfaces utilisateur magnifiques et intuitives avec les principes du design moderne.",
-    duration: "8 semaines",
+    title: "נייל ארט ועיצוב ציפורניים",
+    description: "פתחי את היצירתיות שלך עם טכניקות נייל ארט מתקדמות. מצורות בסיסיות ועד עיצובים מורכבים.",
+    duration: "4 שבועות",
     students: 892,
-    level: "Débutant",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=400&fit=crop",
+    level: "מתקדמים",
+    image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&h=400&fit=crop",
   },
   {
     id: "3",
-    title: "Intelligence Artificielle",
-    description: "Plongez dans le monde de l'IA avec des projets pratiques en machine learning et deep learning.",
-    duration: "16 semaines",
+    title: "הארכות ציפורניים",
+    description: "שלטי בטכניקות הבניה ופילינג מקצועיות. קורס מעשי עם תרגול אינטנסיבי.",
+    duration: "8 שבועות",
     students: 2156,
-    level: "Avancé",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
+    level: "מתקדמים",
+    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&h=400&fit=crop",
   },
   {
     id: "4",
-    title: "Marketing Digital",
-    description: "Développez vos compétences en marketing digital, SEO et stratégies de croissance pour booster votre entreprise.",
-    duration: "10 semaines",
+    title: "מניקור ופדיקור מקצועי",
+    description: "קורס מקיף בטכניקות מניקור ופדיקור ברמה גבוהה. כולל טיפול בכף הרגל והיד.",
+    duration: "5 שבועות",
     students: 1567,
-    level: "Intermédiaire",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+    level: "מתחילים",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=400&fit=crop",
   },
   {
     id: "5",
-    title: "Data Science & Analytics",
-    description: "Analysez et visualisez des données complexes avec Python, pandas et les outils de data science modernes.",
-    duration: "14 semaines",
+    title: "ציפורני פוליג'ל",
+    description: "טכניקת הפוליג'ל החדשנית. למדי לעבוד עם החומר המתקדם ביותר בתחום.",
+    duration: "6 שבועות",
     students: 1890,
-    level: "Intermédiaire",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+    level: "מתקדמים",
+    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=400&fit=crop",
   },
   {
     id: "6",
-    title: "Cybersécurité",
-    description: "Protégez les systèmes et les données avec les meilleures pratiques en sécurité informatique et ethical hacking.",
-    duration: "12 semaines",
+    title: "פתיחת עסק לציפורניים",
+    description: "כל מה שצריך לדעת על פתיחת סלון או עסק ביתי מצליח. כולל שיווק וניהול לקוחות.",
+    duration: "4 שבועות",
     students: 1123,
-    level: "Avancé",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop",
+    level: "מתחילים",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
   },
 ];
 
 const stats = [
-  { icon: BookOpen, value: "100+", label: "Cours en ligne" },
-  { icon: Users, value: "50K+", label: "Étudiants actifs" },
-  { icon: Award, value: "95%", label: "Taux de satisfaction" },
-  { icon: Sparkles, value: "24/7", label: "Support disponible" },
+  { icon: BookOpen, value: "50+", label: "קורסים מקצועיים" },
+  { icon: Users, value: "15K+", label: "בוגרות מצליחות" },
+  { icon: Award, value: "98%", label: "שביעות רצון" },
+  { icon: Sparkles, value: "24/7", label: "תמיכה זמינה" },
 ];
 
 const Index = () => {
@@ -74,26 +74,26 @@ const Index = () => {
       <section className="relative overflow-hidden gradient-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto px-4 py-24 md:py-32 relative">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up" dir="rtl">
             <div className="inline-block">
               <Badge className="gradient-primary text-primary-foreground px-4 py-1.5 text-sm font-medium shadow-glow">
-                ✨ Plateforme d'apprentissage nouvelle génération
+                ✨ אקדמיה מקצועית לציפורניים
               </Badge>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Apprenez à votre
-              <span className="gradient-primary bg-clip-text text-transparent"> rythme</span>
+              הצטרפי לאקדמיה
+              <span className="gradient-primary bg-clip-text text-transparent"> המובילה</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Découvrez des cours en ligne de qualité supérieure avec des instructeurs experts et une communauté dynamique.
+              קורסים מקצועיים לציפורניים עם מדריכות מומחיות וקהילה תומכת. בואי ללמוד את המקצוע מהטובים ביותר
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="gradient-primary shadow-glow text-lg px-8 py-6 rounded-full group">
-                Commencer gratuitement
+                התחילי בחינם
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-secondary/80">
-                Parcourir les cours
+                לכל הקורסים
               </Button>
             </div>
           </div>
@@ -128,13 +128,13 @@ const Index = () => {
       {/* Courses Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+          <div className="text-center space-y-4 mb-16 animate-fade-in-up" dir="rtl">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Nos cours
-              <span className="gradient-primary bg-clip-text text-transparent"> populaires</span>
+              הקורסים
+              <span className="gradient-primary bg-clip-text text-transparent"> הפופולריים שלנו</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Choisissez parmi notre sélection de cours conçus par des experts pour vous aider à atteindre vos objectifs.
+              בחרי מתוך מגוון קורסים מקצועיים שתוכננו על ידי מומחיות מובילות בתחום
             </p>
           </div>
 
@@ -146,10 +146,10 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-16" dir="rtl">
             <Button size="lg" variant="outline" className="rounded-full px-8 py-6 text-lg border-2 hover:bg-secondary/80">
-              Voir tous les cours
-              <ArrowRight className="ml-2 w-5 h-5" />
+              לכל הקורסים
+              <ArrowRight className="mr-2 w-5 h-5" />
             </Button>
           </div>
         </div>
@@ -160,20 +160,20 @@ const Index = () => {
         <div className="absolute inset-0 gradient-hero" />
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in-up">
+          <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in-up" dir="rtl">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Prêt à commencer votre
-              <span className="gradient-primary bg-clip-text text-transparent"> aventure?</span>
+              מוכנה להתחיל
+              <span className="gradient-primary bg-clip-text text-transparent"> את המסע?</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Rejoignez des milliers d'étudiants qui transforment leur carrière avec nos cours premium.
+              הצטרפי לאלפי תלמידות שכבר שינו את הקריירה שלהן עם הקורסים המקצועיים שלנו
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="gradient-primary shadow-glow text-lg px-8 py-6 rounded-full">
-                Créer un compte gratuit
+                הרשמה חינם
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2">
-                Contacter un conseiller
+                צרי קשר
               </Button>
             </div>
           </div>
@@ -183,8 +183,8 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border/50 py-12 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center text-muted-foreground">
-            <p className="text-sm">© 2024 LearnHub. Tous droits réservés.</p>
+          <div className="text-center text-muted-foreground" dir="rtl">
+            <p className="text-sm">© 2024 אקדמיה לציפורניים. כל הזכויות שמורות.</p>
           </div>
         </div>
       </footer>

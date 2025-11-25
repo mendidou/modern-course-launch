@@ -16,7 +16,7 @@ interface CourseCardProps {
 
 export const CourseCard = ({ id, title, description, duration, students, level, image }: CourseCardProps) => {
   return (
-    <Card className="group overflow-hidden border-border/40 backdrop-blur-sm bg-card/80 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in-up">
+    <Card className="group overflow-hidden border-border/40 backdrop-blur-sm bg-card/80 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in-up" dir="rtl">
       <div className="relative h-48 overflow-hidden rounded-t-lg">
         <div className="absolute inset-0 gradient-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
         <img 
@@ -24,7 +24,7 @@ export const CourseCard = ({ id, title, description, duration, students, level, 
           alt={title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <Badge className="absolute top-4 right-4 z-20 bg-primary text-primary-foreground">
+        <Badge className="absolute top-4 left-4 z-20 bg-primary text-primary-foreground">
           {level}
         </Badge>
       </div>
@@ -42,15 +42,15 @@ export const CourseCard = ({ id, title, description, duration, students, level, 
           </div>
           <div className="flex items-center gap-1">
             <Users className="w-4 h-4" />
-            <span>{students} étudiants</span>
+            <span>{students} תלמידות</span>
           </div>
         </div>
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full group/btn gradient-primary border-0 shadow-lg hover:shadow-glow transition-all duration-300">
           <Link to={`/course/${id}`} className="flex items-center justify-center gap-2">
-            En savoir plus
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+            למידע נוסף
+            <ArrowRight className="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform" />
           </Link>
         </Button>
       </CardFooter>
