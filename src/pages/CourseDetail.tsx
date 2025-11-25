@@ -1,68 +1,187 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Clock, Users, Star, CheckCircle2, PlayCircle, BookOpen, Award } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 const coursesData: Record<string, any> = {
   "1": {
-    title: "Développement Web Moderne",
-    description: "Maîtrisez React, TypeScript et les dernières technologies web pour créer des applications modernes et performantes.",
-    longDescription: "Dans ce cours complet, vous apprendrez à construire des applications web modernes en utilisant les technologies les plus récentes. Vous découvrirez React, TypeScript, et bien plus encore à travers des projets pratiques et concrets.",
-    duration: "12 semaines",
+    title: "ג'ל ולק ג'ל",
+    description: "למדי את כל הטכניקות המתקדמות של ג'ל ולק ג'ל. קורס מקצועי ומקיף לבניית קריירה מוצלחת.",
+    longDescription: "בקורס המקיף הזה תלמדי לבנות ציפורניים מושלמות בטכניקת ג'ל ולק ג'ל. נלמד את כל השלבים ממריחה ראשונה ועד לגימור מושלם. הקורס כולל תרגול מעשי על דוגמות ועל לקוחות אמיתיות.",
+    duration: "6 שבועות",
     students: 1234,
-    level: "Intermédiaire",
-    rating: 4.8,
+    level: "מתחילים",
+    rating: 4.9,
     reviews: 342,
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop",
-    price: "149€",
-    instructor: "Marie Dubois",
+    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&h=600&fit=crop",
+    price: "₪1,499",
+    instructor: "רחל כהן",
     modules: [
-      "Introduction à React et TypeScript",
-      "Components et Props avancés",
-      "State Management avec Redux",
-      "Hooks et Custom Hooks",
-      "API Integration et Async",
-      "Performance et Optimisation",
-      "Testing avec Jest et React Testing Library",
-      "Déploiement et CI/CD",
+      "היכרות עם חומרי ג'ל ולק ג'ל",
+      "הכנת הציפורן למריחה",
+      "טכניקות מריחה מושלמות",
+      "עבודה עם מנורת UV/LED",
+      "תיקון ציפורניים שבורות",
+      "שילובי צבעים וגימורים",
+      "טיפים למניעת נזק לציפורן",
+      "בניית תיק עבודות מקצועי",
     ],
     skills: [
-      "React & TypeScript",
-      "State Management",
-      "API Integration",
-      "Testing",
-      "Deployment",
-      "Best Practices",
+      "ג'ל מקצועי",
+      "לק ג'ל",
+      "הכנת ציפורן",
+      "טכניקות מריחה",
+      "תיקון ציפורניים",
+      "שילובי צבעים",
     ],
   },
   "2": {
-    title: "Design UI/UX Avancé",
-    description: "Apprenez à créer des interfaces utilisateur magnifiques et intuitives avec les principes du design moderne.",
-    longDescription: "Ce cours vous guidera à travers les fondamentaux du design UI/UX jusqu'aux techniques avancées. Vous apprendrez à créer des expériences utilisateur exceptionnelles.",
-    duration: "8 semaines",
+    title: "נייל ארט ועיצוב ציפורניים",
+    description: "פתחי את היצירתיות שלך עם טכניקות נייל ארט מתקדמות. מצורות בסיסיות ועד עיצובים מורכבים.",
+    longDescription: "קורס מתקדם המיועד למי שמעוניינת להעמיק את הידע בעיצוב ציפורניים. נלמד טכניקות נייל ארט מגוונות, עבודה עם אביזרים ויצירת עיצובים ייחודיים.",
+    duration: "4 שבועות",
     students: 892,
-    level: "Débutant",
-    rating: 4.9,
+    level: "מתקדמים",
+    rating: 4.8,
     reviews: 256,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop",
-    price: "99€",
-    instructor: "Pierre Martin",
+    image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&h=600&fit=crop",
+    price: "₪1,299",
+    instructor: "שרה לוי",
     modules: [
-      "Principes du Design",
-      "Figma Fundamentals",
-      "Design Systems",
-      "Prototypage",
-      "User Research",
-      "Accessibilité",
+      "עקרונות העיצוב והצבע",
+      "טכניקות ציור על ציפורן",
+      "עבודה עם סטמפינג",
+      "שימוש באביזרים ואבני חן",
+      "עיצובים גיאומטריים",
+      "עיצובי פרחים ותחרה",
+      "גרדיאנט ואומברה",
+      "עיצובים עונתיים וחגיגיים",
     ],
     skills: [
-      "Figma",
-      "Design Systems",
-      "Prototyping",
-      "UX Research",
-      "Accessibility",
+      "ציור על ציפורן",
+      "סטמפינג",
+      "אבני חן ודקורציה",
+      "גרדיאנט",
+      "עיצובים מורכבים",
+    ],
+  },
+  "3": {
+    title: "הארכות ציפורניים",
+    description: "שלטי בטכניקות הבניה ופילינג מקצועיות. קורס מעשי עם תרגול אינטנסיבי.",
+    longDescription: "קורס מקיף המלמד את כל טכניקות ההארכה המודרניות. מבניה על תבנית ועד להארכות על טיפסים. נלמד להתאים את הטכניקה המתאימה לכל לקוחה.",
+    duration: "8 שבועות",
+    students: 2156,
+    level: "מתקדמים",
+    rating: 4.9,
+    reviews: 445,
+    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&h=600&fit=crop",
+    price: "₪1,899",
+    instructor: "מיכל אברהם",
+    modules: [
+      "סוגי הארכות ושימושים",
+      "בניה על תבנית",
+      "בניה על טיפסים",
+      "יצירת צורות מושלמות",
+      "פילינג והסרה נכונה",
+      "חיזוק ציפורן חלשה",
+      "תיקונים מהירים",
+      "תחזוקה ארוכת טווח",
+    ],
+    skills: [
+      "הארכות על תבנית",
+      "הארכות על טיפס",
+      "פילינג מקצועי",
+      "בניה ועיצוב",
+      "תיקונים",
+    ],
+  },
+  "4": {
+    title: "מניקור ופדיקור מקצועי",
+    description: "קורס מקיף בטכניקות מניקור ופדיקור ברמה גבוהה. כולל טיפול בכף הרגל והיד.",
+    longDescription: "למדי לבצע מניקור ופדיקור ברמה מקצועית. הקורס כולל היגיינה, טכניקות חיתוך וטיפול בעור, לצד עבודה מעשית.",
+    duration: "5 שבועות",
+    students: 1567,
+    level: "מתחילים",
+    rating: 4.7,
+    reviews: 298,
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&h=600&fit=crop",
+    price: "₪999",
+    instructor: "ענת דוד",
+    modules: [
+      "עקרונות היגיינה וחיטוי",
+      "טכניקות חיתוך ציפורניים",
+      "טיפול בעור וקוטיקולה",
+      "מריחת לק מושלמת",
+      "פדיקור רפואי בסיסי",
+      "טיפול בציפורן חודרנית",
+    ],
+    skills: [
+      "מניקור מקצועי",
+      "פדיקור מקצועי",
+      "חיתוך מדויק",
+      "טיפול בעור",
+      "היגיינה",
+    ],
+  },
+  "5": {
+    title: "ציפורני פוליג'ל",
+    description: "טכניקת הפוליג'ל החדשנית. למדי לעבוד עם החומר המתקדם ביותר בתחום.",
+    longDescription: "פוליג'ל הוא החומר החדשני ביותר בעולם הציפורניים. קל יותר לעבודה, חזק יותר ונראה טבעי יותר. למדי את כל הטכניקות המתקדמות.",
+    duration: "6 שבועות",
+    students: 1890,
+    level: "מתקדמים",
+    rating: 4.9,
+    reviews: 387,
+    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1200&h=600&fit=crop",
+    price: "₪1,699",
+    instructor: "לירון ישראלי",
+    modules: [
+      "היכרות עם חומר הפוליג'ל",
+      "הכנת הציפורן לפוליג'ל",
+      "בניה על תבנית",
+      "בניה על טיפס",
+      "עיצוב צורות מושלמות",
+      "פילינג ותחזוקה",
+      "שילוב עם טכניקות נוספות",
+      "טיפים למניעת הרמה",
+    ],
+    skills: [
+      "עבודה עם פוליג'ל",
+      "בניה מושלמת",
+      "עיצוב צורות",
+      "פילינג",
+      "תחזוקה",
+    ],
+  },
+  "6": {
+    title: "פתיחת עסק לציפורניים",
+    description: "כל מה שצריך לדעת על פתיחת סלון או עסק ביתי מצליח. כולל שיווק וניהול לקוחות.",
+    longDescription: "קורס ייחודי המלמד את כל ההיבטים העסקיים של פתיחת עסק לציפורניים. משיווק ומיתוג ועד ניהול פיננסי ושימור לקוחות.",
+    duration: "4 שבועות",
+    students: 1123,
+    level: "מתחילים",
+    rating: 4.8,
+    reviews: 215,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop",
+    price: "₪899",
+    instructor: "יעל מזרחי",
+    modules: [
+      "בניית תוכנית עסקית",
+      "רישוי ואישורים",
+      "מיתוג ושיווק דיגיטלי",
+      "ניהול רשתות חברתיות",
+      "תמחור שירותים",
+      "ניהול לקוחות ומערכת תורים",
+      "ניהול פיננסי בסיסי",
+      "שירות לקוחות מעולה",
+    ],
+    skills: [
+      "תכנון עסקי",
+      "שיווק דיגיטלי",
+      "מיתוג אישי",
+      "ניהול לקוחות",
+      "תמחור",
     ],
   },
 };
@@ -73,11 +192,11 @@ const CourseDetail = () => {
 
   if (!course) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" dir="rtl">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Cours non trouvé</h1>
+          <h1 className="text-2xl font-bold mb-4">הקורס לא נמצא</h1>
           <Button asChild>
-            <Link to="/">Retour à l'accueil</Link>
+            <Link to="/">חזרה לדף הבית</Link>
           </Button>
         </div>
       </div>
@@ -85,15 +204,15 @@ const CourseDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" dir="rtl">
       {/* Hero Section */}
       <section className="relative overflow-hidden gradient-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto px-4 py-8">
           <Button asChild variant="ghost" className="mb-6 hover:bg-secondary/80">
             <Link to="/" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Retour aux cours
+              <ArrowLeft className="w-4 h-4 rotate-180" />
+              חזרה לכל הקורסים
             </Link>
           </Button>
 
@@ -109,11 +228,11 @@ const CourseDetail = () => {
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 fill-primary text-primary" />
                   <span className="font-semibold">{course.rating}</span>
-                  <span className="text-muted-foreground">({course.reviews} avis)</span>
+                  <span className="text-muted-foreground">({course.reviews} ביקורות)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5" />
-                  <span>{course.students} étudiants</span>
+                  <span>{course.students} תלמידות</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
@@ -126,8 +245,8 @@ const CourseDetail = () => {
                   {course.price}
                 </div>
                 <Button size="lg" className="gradient-primary shadow-glow rounded-full px-8 group">
-                  <PlayCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  Commencer maintenant
+                  <PlayCircle className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
+                  התחילי עכשיו
                 </Button>
               </div>
             </div>
@@ -154,7 +273,7 @@ const CourseDetail = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-2xl">
                     <BookOpen className="w-6 h-6 text-primary" />
-                    À propos de ce cours
+                    אודות הקורס
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -167,9 +286,9 @@ const CourseDetail = () => {
               {/* Modules */}
               <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Programme du cours</CardTitle>
+                  <CardTitle className="text-2xl">תוכנית הלימודים</CardTitle>
                   <CardDescription>
-                    {course.modules.length} modules pour maîtriser {course.title.toLowerCase()}
+                    {course.modules.length} מודולים ללמידה מעמיקה של {course.title}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -198,7 +317,7 @@ const CourseDetail = () => {
               {/* Instructor */}
               <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
                 <CardHeader>
-                  <CardTitle className="text-xl">Votre instructeur</CardTitle>
+                  <CardTitle className="text-xl">המדריכה שלך</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-4">
@@ -207,7 +326,7 @@ const CourseDetail = () => {
                     </div>
                     <div>
                       <p className="font-semibold text-lg">{course.instructor}</p>
-                      <p className="text-sm text-muted-foreground">Expert certifié</p>
+                      <p className="text-sm text-muted-foreground">מומחית מוסמכת</p>
                     </div>
                   </div>
                 </CardContent>
@@ -218,7 +337,7 @@ const CourseDetail = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-xl">
                     <Award className="w-5 h-5 text-primary" />
-                    Compétences acquises
+                    מיומנויות שתרכשי
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -235,9 +354,9 @@ const CourseDetail = () => {
               {/* CTA Card */}
               <Card className="shadow-glow gradient-card border-primary/20 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
                 <CardHeader>
-                  <CardTitle className="text-xl">Prêt à commencer?</CardTitle>
+                  <CardTitle className="text-xl">מוכנה להתחיל?</CardTitle>
                   <CardDescription>
-                    Rejoignez {course.students} étudiants
+                    הצטרפי ל-{course.students} תלמידות
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -245,10 +364,10 @@ const CourseDetail = () => {
                     {course.price}
                   </div>
                   <Button className="w-full gradient-primary shadow-lg rounded-full">
-                    S'inscrire maintenant
+                    הרשמה לקורס
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
-                    Garantie satisfait ou remboursé 30 jours
+                    החזר כספי מלא תוך 30 יום
                   </p>
                 </CardContent>
               </Card>
