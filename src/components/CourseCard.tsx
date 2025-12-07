@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Clock, Users } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface CourseCardProps {
@@ -9,12 +9,11 @@ interface CourseCardProps {
   title: string;
   description: string;
   duration: string;
-  students: number;
   level: string;
   image: string;
 }
 
-export const CourseCard = ({ id, title, description, duration, students, level, image }: CourseCardProps) => {
+export const CourseCard = ({ id, title, description, duration, level, image }: CourseCardProps) => {
   return (
     <Card className="group overflow-hidden border-border/40 backdrop-blur-sm bg-card/80 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-fade-in-up" dir="rtl">
       <div className="relative h-48 overflow-hidden rounded-t-lg">
@@ -39,10 +38,6 @@ export const CourseCard = ({ id, title, description, duration, students, level, 
           <div className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
             <span>{duration}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Users className="w-4 h-4" />
-            <span>{students} תלמידות</span>
           </div>
         </div>
       </CardContent>

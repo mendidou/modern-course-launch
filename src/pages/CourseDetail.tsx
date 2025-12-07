@@ -1,187 +1,74 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, Users, Star, CheckCircle2, PlayCircle, BookOpen, Award } from "lucide-react";
+import { ArrowLeft, Clock, CheckCircle2, BookOpen, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 
 const coursesData: Record<string, any> = {
   "1": {
     title: "ג'ל ולק ג'ל",
-    description: "למדי את כל הטכניקות המתקדמות של ג'ל ולק ג'ל. קורס מקצועי ומקיף לבניית קריירה מוצלחת.",
-    longDescription: "בקורס המקיף הזה תלמדי לבנות ציפורניים מושלמות בטכניקת ג'ל ולק ג'ל. נלמד את כל השלבים ממריחה ראשונה ועד לגימור מושלם. הקורס כולל תרגול מעשי על דוגמות ועל לקוחות אמיתיות.",
-    duration: "6 שבועות",
-    students: 1234,
-    level: "מתחילים",
-    rating: 4.9,
-    reviews: 342,
+    description: "למדי את הטכניקות של ג'ל ולק ג'ל בליווי אישי וצמוד.",
+    longDescription: "בקורס הפרטי הזה תלמדי לבנות ציפורניים בטכניקת ג'ל ולק ג'ל. נלמד את כל השלבים יחד, בקצב שלך, עם כל הזמן שאת צריכה להבין ולתרגל. הקורס מותאם אישית לרמה שלך.",
+    duration: "מספר מפגשים אישיים",
+    level: "למתחילות",
     image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&h=600&fit=crop",
-    price: "₪1,499",
-    instructor: "רחל כהן",
     modules: [
       "היכרות עם חומרי ג'ל ולק ג'ל",
       "הכנת הציפורן למריחה",
-      "טכניקות מריחה מושלמות",
-      "עבודה עם מנורת UV/LED",
-      "תיקון ציפורניים שבורות",
-      "שילובי צבעים וגימורים",
-      "טיפים למניעת נזק לציפורן",
-      "בניית תיק עבודות מקצועי",
-    ],
-    skills: [
-      "ג'ל מקצועי",
-      "לק ג'ל",
-      "הכנת ציפורן",
       "טכניקות מריחה",
+      "עבודה עם מנורת UV/LED",
       "תיקון ציפורניים",
-      "שילובי צבעים",
+      "שילובי צבעים וגימורים",
+    ],
+    whatYouGet: [
+      "ליווי אישי אחד על אחד",
+      "תרגול מעשי בכל מפגש",
+      "זמינות לשאלות גם בין המפגשים",
+      "חומרים לתרגול בזמן הקורס",
     ],
   },
   "2": {
-    title: "נייל ארט ועיצוב ציפורניים",
-    description: "פתחי את היצירתיות שלך עם טכניקות נייל ארט מתקדמות. מצורות בסיסיות ועד עיצובים מורכבים.",
-    longDescription: "קורס מתקדם המיועד למי שמעוניינת להעמיק את הידע בעיצוב ציפורניים. נלמד טכניקות נייל ארט מגוונות, עבודה עם אביזרים ויצירת עיצובים ייחודיים.",
-    duration: "4 שבועות",
-    students: 892,
-    level: "מתקדמים",
-    rating: 4.8,
-    reviews: 256,
+    title: "נייל ארט ועיצוב",
+    description: "פתחי את היצירתיות שלך עם טכניקות עיצוב בקורס פרטי.",
+    longDescription: "קורס פרטי שבו נלמד יחד טכניקות נייל ארט מגוונות. נתאים את הקצב והתוכן בדיוק למה שאת רוצה ללמוד ולהתפתח בו.",
+    duration: "מספר מפגשים אישיים",
+    level: "למתקדמות",
     image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&h=600&fit=crop",
-    price: "₪1,299",
-    instructor: "שרה לוי",
     modules: [
       "עקרונות העיצוב והצבע",
       "טכניקות ציור על ציפורן",
       "עבודה עם סטמפינג",
-      "שימוש באביזרים ואבני חן",
+      "שימוש באביזרים",
       "עיצובים גיאומטריים",
-      "עיצובי פרחים ותחרה",
       "גרדיאנט ואומברה",
-      "עיצובים עונתיים וחגיגיים",
     ],
-    skills: [
-      "ציור על ציפורן",
-      "סטמפינג",
-      "אבני חן ודקורציה",
-      "גרדיאנט",
-      "עיצובים מורכבים",
+    whatYouGet: [
+      "ליווי אישי אחד על אחד",
+      "תרגול מעשי בכל מפגש",
+      "זמינות לשאלות גם בין המפגשים",
+      "חומרים לתרגול בזמן הקורס",
     ],
   },
   "3": {
     title: "הארכות ציפורניים",
-    description: "שלטי בטכניקות הבניה ופילינג מקצועיות. קורס מעשי עם תרגול אינטנסיבי.",
-    longDescription: "קורס מקיף המלמד את כל טכניקות ההארכה המודרניות. מבניה על תבנית ועד להארכות על טיפסים. נלמד להתאים את הטכניקה המתאימה לכל לקוחה.",
-    duration: "8 שבועות",
-    students: 2156,
-    level: "מתקדמים",
-    rating: 4.9,
-    reviews: 445,
+    description: "למדי טכניקות בניה והארכה עם תרגול מעשי.",
+    longDescription: "קורס פרטי ללימוד טכניקות הארכה. נלמד יחד בקצב שלך, עם דגש על תרגול מעשי והבנה מעמיקה של כל שלב.",
+    duration: "מספר מפגשים אישיים",
+    level: "למתקדמות",
     image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&h=600&fit=crop",
-    price: "₪1,899",
-    instructor: "מיכל אברהם",
     modules: [
       "סוגי הארכות ושימושים",
       "בניה על תבנית",
       "בניה על טיפסים",
-      "יצירת צורות מושלמות",
+      "יצירת צורות",
       "פילינג והסרה נכונה",
-      "חיזוק ציפורן חלשה",
-      "תיקונים מהירים",
-      "תחזוקה ארוכת טווח",
+      "תחזוקה ותיקונים",
     ],
-    skills: [
-      "הארכות על תבנית",
-      "הארכות על טיפס",
-      "פילינג מקצועי",
-      "בניה ועיצוב",
-      "תיקונים",
-    ],
-  },
-  "4": {
-    title: "מניקור ופדיקור מקצועי",
-    description: "קורס מקיף בטכניקות מניקור ופדיקור ברמה גבוהה. כולל טיפול בכף הרגל והיד.",
-    longDescription: "למדי לבצע מניקור ופדיקור ברמה מקצועית. הקורס כולל היגיינה, טכניקות חיתוך וטיפול בעור, לצד עבודה מעשית.",
-    duration: "5 שבועות",
-    students: 1567,
-    level: "מתחילים",
-    rating: 4.7,
-    reviews: 298,
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&h=600&fit=crop",
-    price: "₪999",
-    instructor: "ענת דוד",
-    modules: [
-      "עקרונות היגיינה וחיטוי",
-      "טכניקות חיתוך ציפורניים",
-      "טיפול בעור וקוטיקולה",
-      "מריחת לק מושלמת",
-      "פדיקור רפואי בסיסי",
-      "טיפול בציפורן חודרנית",
-    ],
-    skills: [
-      "מניקור מקצועי",
-      "פדיקור מקצועי",
-      "חיתוך מדויק",
-      "טיפול בעור",
-      "היגיינה",
-    ],
-  },
-  "5": {
-    title: "ציפורני פוליג'ל",
-    description: "טכניקת הפוליג'ל החדשנית. למדי לעבוד עם החומר המתקדם ביותר בתחום.",
-    longDescription: "פוליג'ל הוא החומר החדשני ביותר בעולם הציפורניים. קל יותר לעבודה, חזק יותר ונראה טבעי יותר. למדי את כל הטכניקות המתקדמות.",
-    duration: "6 שבועות",
-    students: 1890,
-    level: "מתקדמים",
-    rating: 4.9,
-    reviews: 387,
-    image: "https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1200&h=600&fit=crop",
-    price: "₪1,699",
-    instructor: "לירון ישראלי",
-    modules: [
-      "היכרות עם חומר הפוליג'ל",
-      "הכנת הציפורן לפוליג'ל",
-      "בניה על תבנית",
-      "בניה על טיפס",
-      "עיצוב צורות מושלמות",
-      "פילינג ותחזוקה",
-      "שילוב עם טכניקות נוספות",
-      "טיפים למניעת הרמה",
-    ],
-    skills: [
-      "עבודה עם פוליג'ל",
-      "בניה מושלמת",
-      "עיצוב צורות",
-      "פילינג",
-      "תחזוקה",
-    ],
-  },
-  "6": {
-    title: "פתיחת עסק לציפורניים",
-    description: "כל מה שצריך לדעת על פתיחת סלון או עסק ביתי מצליח. כולל שיווק וניהול לקוחות.",
-    longDescription: "קורס ייחודי המלמד את כל ההיבטים העסקיים של פתיחת עסק לציפורניים. משיווק ומיתוג ועד ניהול פיננסי ושימור לקוחות.",
-    duration: "4 שבועות",
-    students: 1123,
-    level: "מתחילים",
-    rating: 4.8,
-    reviews: 215,
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop",
-    price: "₪899",
-    instructor: "יעל מזרחי",
-    modules: [
-      "בניית תוכנית עסקית",
-      "רישוי ואישורים",
-      "מיתוג ושיווק דיגיטלי",
-      "ניהול רשתות חברתיות",
-      "תמחור שירותים",
-      "ניהול לקוחות ומערכת תורים",
-      "ניהול פיננסי בסיסי",
-      "שירות לקוחות מעולה",
-    ],
-    skills: [
-      "תכנון עסקי",
-      "שיווק דיגיטלי",
-      "מיתוג אישי",
-      "ניהול לקוחות",
-      "תמחור",
+    whatYouGet: [
+      "ליווי אישי אחד על אחד",
+      "תרגול מעשי בכל מפגש",
+      "זמינות לשאלות גם בין המפגשים",
+      "חומרים לתרגול בזמן הקורס",
     ],
   },
 };
@@ -212,7 +99,7 @@ const CourseDetail = () => {
           <Button asChild variant="ghost" className="mb-6 hover:bg-secondary/80">
             <Link to="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4 rotate-180" />
-              חזרה לכל הקורסים
+              חזרה לדף הבית
             </Link>
           </Button>
 
@@ -226,27 +113,18 @@ const CourseDetail = () => {
               
               <div className="flex items-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
-                  <Star className="w-5 h-5 fill-primary text-primary" />
-                  <span className="font-semibold">{course.rating}</span>
-                  <span className="text-muted-foreground">({course.reviews} ביקורות)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5" />
-                  <span>{course.students} תלמידות</span>
-                </div>
-                <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
                   <span>{course.duration}</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Heart className="w-5 h-5 text-primary" />
+                  <span>קורס פרטי אחד על אחד</span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-4 pt-4">
-                <div className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
-                  {course.price}
-                </div>
-                <Button size="lg" className="gradient-primary shadow-glow rounded-full px-8 group">
-                  <PlayCircle className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
-                  התחילי עכשיו
+              <div className="pt-4">
+                <Button size="lg" className="gradient-primary shadow-glow rounded-full px-8">
+                  צרי קשר לפרטים
                 </Button>
               </div>
             </div>
@@ -286,9 +164,9 @@ const CourseDetail = () => {
               {/* Modules */}
               <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
                 <CardHeader>
-                  <CardTitle className="text-2xl">תוכנית הלימודים</CardTitle>
+                  <CardTitle className="text-2xl">מה נלמד</CardTitle>
                   <CardDescription>
-                    {course.modules.length} מודולים ללמידה מעמיקה של {course.title}
+                    נושאים מרכזיים שנעבור עליהם יחד
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -314,60 +192,40 @@ const CourseDetail = () => {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              {/* Instructor */}
+              {/* What You Get */}
               <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
                 <CardHeader>
-                  <CardTitle className="text-xl">המדריכה שלך</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center text-2xl font-bold text-primary-foreground">
-                      {course.instructor.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-lg">{course.instructor}</p>
-                      <p className="text-sm text-muted-foreground">מומחית מוסמכת</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Skills */}
-              <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-xl">
-                    <Award className="w-5 h-5 text-primary" />
-                    מיומנויות שתרכשי
+                    <Heart className="w-5 h-5 text-primary" />
+                    מה מקבלים
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {course.skills.map((skill: string, index: number) => (
-                      <Badge key={index} variant="secondary" className="px-3 py-1">
-                        {skill}
-                      </Badge>
+                  <ul className="space-y-3">
+                    {course.whatYouGet.map((item: string, index: number) => (
+                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                        <span>{item}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </CardContent>
               </Card>
 
               {/* CTA Card */}
-              <Card className="shadow-glow gradient-card border-primary/20 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <Card className="shadow-glow gradient-card border-primary/20 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <CardHeader>
-                  <CardTitle className="text-xl">מוכנה להתחיל?</CardTitle>
+                  <CardTitle className="text-xl">רוצה לשמוע עוד?</CardTitle>
                   <CardDescription>
-                    הצטרפי ל-{course.students} תלמידות
+                    בואי נדבר ונראה אם הקורס מתאים לך
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="text-3xl font-bold gradient-primary bg-clip-text text-transparent">
-                    {course.price}
-                  </div>
                   <Button className="w-full gradient-primary shadow-lg rounded-full">
-                    הרשמה לקורס
+                    צרי קשר
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
-                    החזר כספי מלא תוך 30 יום
+                    בלי התחייבות, רק שיחה
                   </p>
                 </CardContent>
               </Card>
