@@ -8,7 +8,7 @@ import { faq } from "@/data/faq";
 
 export const Faq = () => {
   return (
-    <Accordion type="single" collapsible className="border-t border-border" dir="rtl">
+    <Accordion type="single" collapsible className="rounded-3xl border border-border bg-card px-6 shadow-card" dir="rtl">
       {faq.map((item, index) => (
         <AccordionItem key={item.question} value={`item-${index}`} className="border-border">
           <AccordionTrigger className="gap-4 py-5 text-right text-lg font-medium hover:no-underline">

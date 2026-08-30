@@ -6,7 +6,7 @@ export const Testimonials = () => {
       {testimonials.map((item, index) => (
         <li
           key={`${item.handle}-${index}`}
-          className="rounded-2xl border border-border bg-card p-5 flex flex-col gap-3"
+          className="rounded-3xl border border-border gradient-card p-6 flex flex-col gap-3 shadow-card"
         >
           <p className="text-lg font-medium flex-1">{item.text}</p>
           <p className="text-sm text-muted-foreground" dir="ltr">

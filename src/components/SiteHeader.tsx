@@ -29,7 +29,7 @@ export const SiteHeader = () => {
             ))}
           </div>
 
-          <Button asChild size="sm" className="rounded-full px-4">
+          <Button asChild size="sm" className="gradient-primary shadow-glow rounded-full px-4">
             <a href={`${home}#contact`}>בואי נדבר</a>
           </Button>
         </nav>

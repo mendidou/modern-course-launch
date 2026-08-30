@@ -28,7 +28,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
   return (
     <article
-      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card animate-fade-in-up"
+      className="group flex flex-col overflow-hidden rounded-3xl border border-border gradient-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift animate-fade-in-up"
       dir="rtl"
     >
       <div className="relative h-52 md:h-64 overflow-hidden border-b border-border">
@@ -59,11 +59,11 @@ export const CourseCard = ({
 
         <div className="mt-auto pt-4">
           {comingSoon ? (
-            <Button disabled variant="secondary" className="w-full rounded-lg">
+            <Button disabled variant="secondary" className="w-full rounded-2xl">
               בקרוב
             </Button>
           ) : (
-            <Button asChild className="w-full rounded-lg group/btn">
+            <Button asChild className="w-full gradient-primary shadow-glow rounded-2xl group/btn">
               <Link to={`/course/${id}`} className="flex items-center justify-center gap-2">
                 למידע נוסף
                 <ArrowRight className="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform" />

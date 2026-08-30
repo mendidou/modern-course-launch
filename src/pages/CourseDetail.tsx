@@ -14,7 +14,7 @@ const CourseDetail = () => {
       <div className="min-h-screen flex items-center justify-center" dir="rtl">
         <div className="text-center space-y-4">
           <h1 className="text-2xl font-semibold">הקורס לא נמצא</h1>
-          <Button asChild className="rounded-lg">
+          <Button asChild className="gradient-primary shadow-glow rounded-2xl">
             <Link to="/">חזרה לדף הבית</Link>
           </Button>
         </div>
@@ -23,7 +23,7 @@ const CourseDetail = () => {
   }
 
   const backLink = (
-    <Button asChild variant="ghost" className="mb-8 -mr-3 rounded-lg">
+    <Button asChild variant="ghost" className="mb-8 -mr-3 rounded-2xl">
       <Link to="/" className="flex items-center gap-2">
         <ArrowLeft className="w-4 h-4 rotate-180" />
         חזרה לדף הבית
@@ -46,10 +46,10 @@ const CourseDetail = () => {
               ולהיות מהראשונות שיֵדעו כשנפתחת הרשמה.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button asChild size="lg" className="rounded-lg px-6">
+              <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
                 <Link to="/course/1">לקורס מניקור בסיסי</Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-lg px-6">
+              <Button size="lg" variant="outline" className="rounded-2xl px-7 bg-card shadow-card">
                 עדכנו אותי כשנפתח
               </Button>
             </div>
@@ -66,7 +66,7 @@ const CourseDetail = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="border-b border-border">
+      <section className="gradient-hero border-b border-border">
         <div className="container mx-auto px-4 py-12">
           {backLink}
 
@@ -88,17 +88,17 @@ const CourseDetail = () => {
               </div>
 
               <div className="pt-2">
-                <Button size="lg" className="rounded-lg px-6">
+                <Button size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
                   צרי קשר לפרטים
                 </Button>
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-2">
+            <div className="rounded-[2rem] border border-border bg-card p-3 shadow-card">
               <img
                 src={detail.image}
                 alt={course.title}
-                className="w-full rounded-xl object-cover"
+                className="w-full rounded-[1.5rem] object-cover"
               />
             </div>
           </div>
@@ -154,12 +154,12 @@ const CourseDetail = () => {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-border bg-secondary p-6 space-y-4">
+              <div className="rounded-3xl border border-border gradient-card p-6 space-y-4 shadow-card">
                 <h2 className="text-lg font-semibold">רוצה לשמוע עוד?</h2>
                 <p className="text-sm text-muted-foreground">
                   בואי נדבר ונראה אם הקורס מתאים לך.
                 </p>
-                <Button className="w-full rounded-lg">צרי קשר</Button>
+                <Button className="w-full gradient-primary shadow-glow rounded-2xl">צרי קשר</Button>
                 <p className="text-xs text-muted-foreground">בלי התחייבות, רק שיחה</p>
               </div>
             </aside>

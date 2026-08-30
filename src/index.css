@@ -5,111 +5,110 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 
-Palette: warm salon neutrals (ivory, sand, espresso) with a single terracotta accent.
-No gradients: one flat accent colour, used sparingly.
+Palette: blush neutrals with a dusty rose accent. Soft rose-tinted shadows and a
+subtle two-stop gradient on the primary surfaces.
 */
 
 @layer base {
   :root {
-    --background: 36 33% 97%;
-    --foreground: 25 22% 15%;
+    --background: 20 45% 98%;
+    --foreground: 340 15% 18%;
 
-    --card: 40 40% 99%;
-    --card-foreground: 25 22% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 15% 18%;
 
-    --popover: 40 40% 99%;
-    --popover-foreground: 25 22% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 15% 18%;
 
-    /* Terracotta. 5.4:1 on the ivory background, 5.7:1 for white text on it. */
-    --primary: 14 50% 42%;
-    --primary-foreground: 40 40% 98%;
-    --primary-glow: 18 55% 55%;
+    /* Dusty rose. 5.6:1 on the background, 5.8:1 for white text on it. */
+    --primary: 345 50% 46%;
+    --primary-foreground: 20 45% 99%;
+    --primary-glow: 330 48% 52%;
 
-    --secondary: 33 28% 93%;
-    --secondary-foreground: 25 22% 15%;
+    --secondary: 340 32% 95%;
+    --secondary-foreground: 340 15% 18%;
 
-    --muted: 33 22% 91%;
-    --muted-foreground: 28 12% 40%;
+    --muted: 340 25% 94%;
+    --muted-foreground: 340 10% 42%;
 
-    --accent: 18 55% 55%;
-    --accent-foreground: 40 40% 98%;
+    --accent: 340 60% 88%;
+    --accent-foreground: 340 15% 18%;
 
     --destructive: 0 60% 45%;
-    --destructive-foreground: 40 40% 98%;
+    --destructive-foreground: 20 45% 99%;
 
-    --border: 30 16% 87%;
-    --input: 30 16% 87%;
-    --ring: 14 50% 42%;
+    --border: 340 22% 90%;
+    --input: 340 22% 90%;
+    --ring: 345 50% 46%;
 
-    --radius: 0.625rem;
+    --radius: 1rem;
 
-    /* Flat surfaces. Kept as variables so the `gradient-*` utilities below stay
-       one-line swaps if a gradient is ever wanted again. */
-    --gradient-primary: hsl(14 50% 42%);
-    --gradient-hero: hsl(36 33% 97%);
-    --gradient-card: hsl(33 28% 95%);
+    /* Both gradient stops keep white text above 4.5:1. */
+    --gradient-primary: linear-gradient(135deg, hsl(345 52% 44%), hsl(330 48% 52%));
+    --gradient-hero: linear-gradient(180deg, hsl(20 45% 98%), hsl(345 42% 96%));
+    --gradient-card: linear-gradient(160deg, hsl(0 0% 100%), hsl(345 40% 97%));
 
-    /* Shadows: neutral and shallow, no coloured glow. */
-    --shadow-lg: 0 12px 28px -12px hsl(25 22% 15% / 0.14);
-    --shadow-glow: 0 6px 20px -8px hsl(25 22% 15% / 0.16);
-    --shadow-card: 0 1px 2px hsl(25 22% 15% / 0.04);
+    /* Soft, rose-tinted so shadows sit in the palette instead of going grey. */
+    --shadow-lg: 0 18px 40px -14px hsl(340 30% 35% / 0.22);
+    --shadow-glow: 0 10px 26px -10px hsl(345 50% 46% / 0.38);
+    --shadow-card: 0 1px 2px hsl(340 20% 40% / 0.05), 0 10px 26px -12px hsl(340 25% 38% / 0.16);
 
-    --sidebar-background: 36 33% 97%;
-    --sidebar-foreground: 25 22% 15%;
-    --sidebar-primary: 14 50% 42%;
-    --sidebar-primary-foreground: 40 40% 98%;
-    --sidebar-accent: 33 28% 93%;
-    --sidebar-accent-foreground: 25 22% 15%;
-    --sidebar-border: 30 16% 87%;
-    --sidebar-ring: 14 50% 42%;
+    --sidebar-background: 20 45% 98%;
+    --sidebar-foreground: 340 15% 18%;
+    --sidebar-primary: 345 50% 46%;
+    --sidebar-primary-foreground: 20 45% 99%;
+    --sidebar-accent: 340 32% 95%;
+    --sidebar-accent-foreground: 340 15% 18%;
+    --sidebar-border: 340 22% 90%;
+    --sidebar-ring: 345 50% 46%;
   }
 
   .dark {
-    --background: 25 14% 10%;
-    --foreground: 36 33% 96%;
+    --background: 340 14% 10%;
+    --foreground: 20 40% 96%;
 
-    --card: 25 12% 14%;
-    --card-foreground: 36 33% 96%;
+    --card: 340 12% 14%;
+    --card-foreground: 20 40% 96%;
 
-    --popover: 25 12% 14%;
-    --popover-foreground: 36 33% 96%;
+    --popover: 340 12% 14%;
+    --popover-foreground: 20 40% 96%;
 
-    --primary: 18 60% 58%;
-    --primary-foreground: 25 14% 10%;
-    --primary-glow: 18 55% 55%;
+    --primary: 340 58% 62%;
+    --primary-foreground: 340 14% 10%;
+    --primary-glow: 330 55% 68%;
 
-    --secondary: 25 10% 18%;
-    --secondary-foreground: 36 33% 96%;
+    --secondary: 340 10% 18%;
+    --secondary-foreground: 20 40% 96%;
 
-    --muted: 25 10% 18%;
-    --muted-foreground: 30 10% 65%;
+    --muted: 340 10% 18%;
+    --muted-foreground: 340 10% 66%;
 
-    --accent: 18 55% 55%;
-    --accent-foreground: 25 14% 10%;
+    --accent: 340 30% 28%;
+    --accent-foreground: 20 40% 96%;
 
     --destructive: 0 55% 48%;
-    --destructive-foreground: 36 33% 96%;
+    --destructive-foreground: 20 40% 96%;
 
-    --border: 25 10% 20%;
-    --input: 25 10% 20%;
-    --ring: 18 60% 58%;
+    --border: 340 10% 22%;
+    --input: 340 10% 22%;
+    --ring: 340 58% 62%;
 
-    --gradient-primary: hsl(18 60% 58%);
-    --gradient-hero: hsl(25 14% 10%);
-    --gradient-card: hsl(25 12% 16%);
+    --gradient-primary: linear-gradient(135deg, hsl(340 58% 62%), hsl(330 55% 68%));
+    --gradient-hero: linear-gradient(180deg, hsl(340 14% 10%), hsl(340 16% 14%));
+    --gradient-card: linear-gradient(160deg, hsl(340 12% 14%), hsl(340 14% 17%));
 
-    --shadow-lg: 0 12px 28px -12px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 6px 20px -8px hsl(0 0% 0% / 0.45);
-    --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 18px 40px -14px hsl(0 0% 0% / 0.55);
+    --shadow-glow: 0 10px 26px -10px hsl(340 58% 62% / 0.35);
+    --shadow-card: 0 1px 2px hsl(0 0% 0% / 0.3), 0 10px 26px -12px hsl(0 0% 0% / 0.45);
 
-    --sidebar-background: 25 14% 10%;
-    --sidebar-foreground: 36 33% 96%;
-    --sidebar-primary: 18 60% 58%;
-    --sidebar-primary-foreground: 25 14% 10%;
-    --sidebar-accent: 25 10% 18%;
-    --sidebar-accent-foreground: 36 33% 96%;
-    --sidebar-border: 25 10% 20%;
-    --sidebar-ring: 18 60% 58%;
+    --sidebar-background: 340 14% 10%;
+    --sidebar-foreground: 20 40% 96%;
+    --sidebar-primary: 340 58% 62%;
+    --sidebar-primary-foreground: 340 14% 10%;
+    --sidebar-accent: 340 10% 18%;
+    --sidebar-accent-foreground: 20 40% 96%;
+    --sidebar-border: 340 10% 22%;
+    --sidebar-ring: 340 58% 62%;
   }
 }
 
@@ -133,9 +132,13 @@ No gradients: one flat accent colour, used sparingly.
     background: var(--gradient-primary);
   }
 
-  /* Accent-coloured run of text inside a heading. Flat colour, no clipping tricks. */
+  /* Gradient text. `gradient-primary bg-clip-text` does not work: the `background`
+     shorthand resets `background-clip`, so the text renders as a solid block. */
   .gradient-text {
-    color: hsl(var(--primary));
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .gradient-hero {
@@ -152,6 +155,10 @@ No gradients: one flat accent colour, used sparingly.
 
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+
+  .shadow-lift {
+    box-shadow: var(--shadow-lg);
   }
 
   /* Small caps label above a section title. */

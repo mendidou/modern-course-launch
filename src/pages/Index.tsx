@@ -42,7 +42,7 @@ const Index = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="border-b border-border">
+      <section className="gradient-hero border-b border-border">
         <div className="container mx-auto px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
             <div className="space-y-5 animate-fade-in-up">
@@ -50,7 +50,7 @@ const Index = () => {
               <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
                 למדי מניקור מהבסיס,
                 <br />
-                <span className="text-muted-foreground">בקצב שלך.</span>
+                <span className="gradient-text">בקצב שלך.</span>
               </h1>
             </div>
 
@@ -60,10 +60,10 @@ const Index = () => {
                 וטכניקה נכונה, עד לתוצאה נקייה שאפשר לסמוך עליה.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild size="lg" className="rounded-lg text-base px-6">
+                <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
                   <a href="#contact">בואי נדבר</a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-lg text-base px-6">
+                <Button asChild size="lg" variant="outline" className="rounded-2xl text-base px-7 bg-card shadow-card">
                   <a href="#courses">הקורסים שלי</a>
                 </Button>
               </div>
@@ -71,11 +71,11 @@ const Index = () => {
           </div>
 
           {/* Wide media panel */}
-          <div className="mt-12 md:mt-16 rounded-2xl border border-border bg-card p-2 md:p-3 animate-fade-in-up">
+          <div className="mt-12 md:mt-16 rounded-[2rem] border border-border bg-card p-3 shadow-card animate-fade-in-up">
             <img
               src={heroImage}
               alt="תוצאה של מניקור מקצועי, ציפורניים בצורת שקד"
-              className="w-full h-[18rem] md:h-[26rem] rounded-xl object-cover object-[50%_25%]"
+              className="w-full h-[18rem] md:h-[26rem] rounded-[1.5rem] object-cover object-[50%_25%]"
             />
           </div>
         </div>
@@ -93,10 +93,12 @@ const Index = () => {
               אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {benefits.map((item) => (
-              <div key={item.title} className="bg-card p-7 space-y-3">
-                <item.icon className="w-5 h-5 text-primary" />
+              <div key={item.title} className="rounded-3xl border border-border gradient-card p-7 space-y-3 shadow-card">
+                <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl gradient-primary text-primary-foreground shadow-glow">
+                  <item.icon className="w-5 h-5" />
+                </span>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
@@ -120,7 +122,7 @@ const Index = () => {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((item, index) => (
-              <div key={item.title} className="space-y-3 border-t border-border pt-5">
+              <div key={item.title} className="space-y-3 rounded-3xl border border-border bg-card p-6 shadow-card">
                 <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
@@ -192,7 +194,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="scroll-mt-24 py-20 md:py-28">
+      <section id="contact" className="scroll-mt-24 gradient-hero py-20 md:py-28">
         <div className="container mx-auto px-4" dir="rtl">
           <div className="max-w-2xl space-y-6">
             <p className="eyebrow">יצירת קשר</p>
@@ -203,7 +205,7 @@ const Index = () => {
               בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
             </p>
             <div>
-              <Button size="lg" className="rounded-lg text-base px-6">
+              <Button size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
                 צרי קשר
               </Button>
             </div>
