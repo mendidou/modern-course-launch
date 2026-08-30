@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
-import { Heart, Clock, UserCheck, Sparkles, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Heart, Clock, UserCheck, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
+import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
 
 const benefits = [
   { icon: UserCheck, title: "תשומת לב מלאה", desc: "כל המפגש מוקדש רק לך ולהתקדמות שלך" },
-  { icon: Clock, title: "בקצב שלך", desc: "לא צריך לרוץ או לחכות - מתקדמים יחד" },
+  { icon: Clock, title: "בקצב שלך", desc: "לא צריך לרוץ או לחכות, מתקדמים יחד" },
   { icon: Heart, title: "ליווי אישי", desc: "אני כאן בשבילך גם בין המפגשים" },
 ];
 
@@ -16,7 +16,7 @@ const highlights = [
   {
     icon: Layers,
     title: "להבין על מה עובדים",
-    desc: "המבנה האנטומי של הציפורן — הבסיס לכל טיפול נקי ובטוח",
+    desc: "המבנה האנטומי של הציפורן, הבסיס לכל טיפול נקי ובטוח",
   },
   {
     icon: ShieldCheck,
@@ -38,80 +38,65 @@ const highlights = [
 const Index = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden gradient-hero">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="container mx-auto px-4 py-20 md:py-28 relative">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" dir="rtl">
-            <div className="text-center lg:text-right space-y-8 animate-fade-in-up">
-              <div className="inline-block">
-                <Badge className="gradient-primary text-primary-foreground px-4 py-1.5 text-sm font-medium shadow-glow">
-                  <Heart className="w-4 h-4 ml-2 inline" />
-                  קורס מניקור בסיסי — נפתח להרשמה
-                </Badge>
-              </div>
-              <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight">
-                למדי מניקור מהבסיס
-                <span className="gradient-text"> בקצב שלך</span>
+      <SiteHeader />
+
+      {/* Hero */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
+          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
+            <div className="space-y-5 animate-fade-in-up">
+              <p className="eyebrow">קורס מניקור בסיסי, נפתח להרשמה</p>
+              <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
+                למדי מניקור מהבסיס,
+                <br />
+                <span className="text-muted-foreground">בקצב שלך.</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות — אנטומיה, היגיינה
-                וטכניקה נכונה — כדי שתגיעי לתוצאה מקצועית ובטוחה, בביטחון מלא.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-                <Button size="lg" className="gradient-primary shadow-glow text-lg px-8 py-6 rounded-full group">
-                  בואי נדבר
-                  <Sparkles className="mr-2 w-5 h-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-secondary/80">
-                  הקורסים שלי
-                </Button>
-              </div>
             </div>
 
-            <div className="relative animate-scale-in">
-              <div className="absolute -inset-6 gradient-primary rounded-[2.5rem] opacity-20 blur-3xl" />
-              <img
-                src={heroImage}
-                alt="תוצאה של מניקור מקצועי — ציפורניים בצורת שקד"
-                className="relative rounded-3xl shadow-card w-full max-h-[34rem] object-cover"
-              />
+            <div className="space-y-6">
+              <p className="text-base md:text-lg text-muted-foreground max-w-md">
+                קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות: אנטומיה, היגיינה
+                וטכניקה נכונה, עד לתוצאה נקייה שאפשר לסמוך עליה.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button asChild size="lg" className="rounded-lg text-base px-6">
+                  <a href="#contact">בואי נדבר</a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-lg text-base px-6">
+                  <a href="#courses">הקורסים שלי</a>
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* Floating Elements */}
-          <div className="absolute top-10 right-0 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float -z-10" />
-          <div
-            className="absolute bottom-0 right-1/3 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float -z-10"
-            style={{ animationDelay: "2s" }}
-          />
+          {/* Wide media panel */}
+          <div className="mt-12 md:mt-16 rounded-2xl border border-border bg-card p-2 md:p-3 animate-fade-in-up">
+            <img
+              src={heroImage}
+              alt="תוצאה של מניקור מקצועי, ציפורניים בצורת שקד"
+              className="w-full h-[18rem] md:h-[26rem] rounded-xl object-cover object-[50%_25%]"
+            />
+          </div>
         </div>
       </section>
 
-      {/* Why Private Section */}
-      <section className="py-20 border-y border-border/50 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-12 animate-fade-in-up" dir="rtl">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              למה קורס
-              <span className="gradient-text"> פרטי?</span>
+      {/* Why private */}
+      <section id="why" className="py-20 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-4 mb-12">
+            <p className="eyebrow">למה פרטי</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              שלוש סיבות שבגללן אני מלמדת אחת על אחת.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב
+            <p className="text-lg text-muted-foreground">
+              אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {benefits.map((item, index) => (
-              <div
-                key={index}
-                className="text-center space-y-4 p-6 rounded-3xl bg-card/80 shadow-card animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-                dir="rtl"
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl gradient-primary text-primary-foreground">
-                  <item.icon className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border rounded-2xl overflow-hidden">
+            {benefits.map((item) => (
+              <div key={item.title} className="bg-card p-7 space-y-3">
+                <item.icon className="w-5 h-5 text-primary" />
+                <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
@@ -119,72 +104,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What You Learn Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div dir="rtl">
-            <div className="text-center space-y-4 mb-12 animate-fade-in-up max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                מה נלמד בקורס
-                <span className="gradient-text"> המניקור הבסיסי?</span>
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
-                בתיאוריה ובתרגול מעשי — את התוכן המלא נעבור במפגשים.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {highlights.map((item, index) => (
-                <div
-                  key={index}
-                  className="space-y-3 p-6 rounded-2xl bg-card/80 shadow-card animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl gradient-primary text-primary-foreground">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-semibold">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Courses Section */}
-      <section className="py-24 bg-secondary/30 border-y border-border/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up" dir="rtl">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              הקורסים
-              <span className="gradient-text"> שלי</span>
+      {/* What you learn */}
+      <section className="py-20 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-4 mb-12">
+            <p className="eyebrow">תוכן הקורס</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              מה נלמד בקורס המניקור הבסיסי.
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              כרגע נפתח להרשמה קורס המניקור הבסיסי. שאר הקורסים בדרך — ואפשר להשאיר פרטים
-              ולהיות הראשונות לדעת.
+            <p className="text-lg text-muted-foreground">
+              הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
+              בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.map((course, index) => (
-              <div key={course.id} style={{ animationDelay: `${index * 0.1}s` }}>
-                <CourseCard {...course} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {highlights.map((item, index) => (
+              <div key={item.title} className="space-y-3 border-t border-border pt-5">
+                <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-12 animate-fade-in-up" dir="rtl">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              מה אומרות
-              <span className="gradient-text"> הלקוחות שלי</span>
+      {/* Courses */}
+      <section id="courses" className="py-20 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-4 mb-12">
+            <p className="eyebrow">הקורסים</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
+            <p className="text-lg text-muted-foreground">
+              כרגע נפתח להרשמה קורס המניקור הבסיסי. שאר הקורסים בדרך, ואפשר להשאיר פרטים
+              ולהיות הראשונות לדעת.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+            {courses.map((course) => (
+              <CourseCard key={course.id} {...course} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-4 mb-12">
+            <p className="eyebrow">לקוחות</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              מה אומרות הלקוחות שלי.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground">
               תגובות אמיתיות שנכתבו על העבודות שלי באינסטגרם{" "}
               <a
                 href="https://www.instagram.com/rbknails/"
@@ -201,21 +174,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-hero" />
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in-up" dir="rtl">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              רוצה לשמוע
-              <span className="gradient-text"> עוד?</span>
+      {/* CTA */}
+      <section id="contact" className="py-20 md:py-28">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-6">
+            <p className="eyebrow">יצירת קשר</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              רוצה לשמוע עוד?
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button size="lg" className="gradient-primary shadow-glow text-lg px-8 py-6 rounded-full">
+            <div>
+              <Button size="lg" className="rounded-lg text-base px-6">
                 צרי קשר
               </Button>
             </div>
@@ -223,11 +194,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border/50 py-12 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center text-muted-foreground" dir="rtl">
-            <p className="text-sm">© 2024 כל הזכויות שמורות</p>
+      <footer className="border-t border-border py-10">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm text-muted-foreground">
+            <p>© 2024 כל הזכויות שמורות</p>
+            <a
+              href="https://www.instagram.com/rbknails/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground transition-colors"
+              dir="ltr"
+            >
+              @rbknails
+            </a>
           </div>
         </div>
       </footer>

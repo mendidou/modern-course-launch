@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Clock, CheckCircle2, BookOpen, Heart } from "lucide-react";
+import { ArrowLeft, Clock, Check, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
+import { SiteHeader } from "@/components/SiteHeader";
 import { getCourse } from "@/data/courses";
 
 const CourseDetail = () => {
@@ -12,9 +12,9 @@ const CourseDetail = () => {
   if (!course) {
     return (
       <div className="min-h-screen flex items-center justify-center" dir="rtl">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">הקורס לא נמצא</h1>
-          <Button asChild>
+        <div className="text-center space-y-4">
+          <h1 className="text-2xl font-semibold">הקורס לא נמצא</h1>
+          <Button asChild className="rounded-lg">
             <Link to="/">חזרה לדף הבית</Link>
           </Button>
         </div>
@@ -22,30 +22,34 @@ const CourseDetail = () => {
     );
   }
 
+  const backLink = (
+    <Button asChild variant="ghost" className="mb-8 -mr-3 rounded-lg">
+      <Link to="/" className="flex items-center gap-2">
+        <ArrowLeft className="w-4 h-4 rotate-180" />
+        חזרה לדף הבית
+      </Link>
+    </Button>
+  );
+
   if (!course.detail) {
     return (
-      <div className="min-h-screen gradient-hero" dir="rtl">
-        <div className="container mx-auto px-4 py-8">
-          <Button asChild variant="ghost" className="mb-6 hover:bg-secondary/80">
-            <Link to="/" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4 rotate-180" />
-              חזרה לדף הבית
-            </Link>
-          </Button>
-
-          <div className="max-w-2xl mx-auto text-center space-y-6 py-16 animate-fade-in-up">
-            <Badge className="bg-muted text-muted-foreground">בקרוב</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold">{course.title}</h1>
-            <p className="text-xl text-muted-foreground">{course.description}</p>
+      <div className="min-h-screen" dir="rtl">
+        <SiteHeader />
+        <div className="container mx-auto px-4 py-12">
+          {backLink}
+          <div className="max-w-xl space-y-5 py-8 animate-fade-in-up">
+            <p className="eyebrow">בקרוב</p>
+            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">{course.title}</h1>
+            <p className="text-lg text-muted-foreground">{course.description}</p>
             <p className="text-muted-foreground">
               הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס המניקור הבסיסי, או להשאיר פרטים
               ולהיות מהראשונות שיֵדעו כשנפתחת הרשמה.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button asChild size="lg" className="gradient-primary shadow-glow rounded-full px-8">
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <Button asChild size="lg" className="rounded-lg px-6">
                 <Link to="/course/1">לקורס מניקור בסיסי</Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-2">
+              <Button size="lg" variant="outline" className="rounded-lg px-6">
                 עדכנו אותי כשנפתח
               </Button>
             </div>
@@ -59,144 +63,106 @@ const CourseDetail = () => {
 
   return (
     <div className="min-h-screen" dir="rtl">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden gradient-hero">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="container mx-auto px-4 py-8">
-          <Button asChild variant="ghost" className="mb-6 hover:bg-secondary/80">
-            <Link to="/" className="flex items-center gap-2">
-              <ArrowLeft className="w-4 h-4 rotate-180" />
-              חזרה לדף הבית
-            </Link>
-          </Button>
+      <SiteHeader />
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6 animate-fade-in-up">
-              <Badge className="gradient-primary text-primary-foreground">
-                {course.level}
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold">{course.title}</h1>
-              <p className="text-xl text-muted-foreground">{course.description}</p>
+      {/* Hero */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 py-12">
+          {backLink}
 
-              <div className="flex items-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  <span>{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Heart className="w-5 h-5 text-primary" />
-                  <span>קורס פרטי אחד על אחד</span>
-                </div>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <div className="space-y-5 animate-fade-in-up">
+              <p className="eyebrow">{course.level}</p>
+              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">{course.title}</h1>
+              <p className="text-lg text-muted-foreground">{course.description}</p>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {course.duration}
+                </span>
+                <span className="flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-primary" />
+                  קורס פרטי אחד על אחד
+                </span>
               </div>
 
-              <div className="pt-4">
-                <Button size="lg" className="gradient-primary shadow-glow rounded-full px-8">
+              <div className="pt-2">
+                <Button size="lg" className="rounded-lg px-6">
                   צרי קשר לפרטים
                 </Button>
               </div>
             </div>
 
-            <div className="relative animate-scale-in">
-              <div className="absolute inset-0 gradient-card rounded-3xl opacity-50 blur-2xl" />
+            <div className="rounded-2xl border border-border bg-card p-2">
               <img
                 src={detail.image}
                 alt={course.title}
-                className="relative rounded-3xl shadow-card w-full"
+                className="w-full rounded-xl object-cover"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content Section */}
-      <section className="py-16">
+      {/* Content */}
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-2 space-y-8">
-              {/* About */}
-              <Card className="shadow-card animate-fade-in-up">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-2xl">
-                    <BookOpen className="w-6 h-6 text-primary" />
-                    אודות הקורס
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {detail.longDescription}
-                  </p>
-                </CardContent>
-              </Card>
+          <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
+            <div className="lg:col-span-2 space-y-12">
+              <div className="space-y-4">
+                <p className="eyebrow">אודות הקורס</p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {detail.longDescription}
+                </p>
+              </div>
 
-              {/* Modules */}
-              <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                <CardHeader>
-                  <CardTitle className="text-2xl">מה נלמד</CardTitle>
-                  <CardDescription>
-                    ראשי הפרקים שנעבור יחד — את התוכן המלא לומדים במפגשים
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {detail.modules.map((module, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
-                      >
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg gradient-primary text-primary-foreground text-sm font-semibold shrink-0">
-                          {index + 1}
-                        </div>
-                        <div className="flex-1">
-                          <p className="font-medium">{module}</p>
-                        </div>
-                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <p className="eyebrow">מה נלמד</p>
+                  <p className="text-muted-foreground">
+                    ראשי הפרקים שנעבור יחד. את התוכן המלא לומדים במפגשים.
+                  </p>
+                </div>
+                <ol className="border-t border-border">
+                  {detail.modules.map((module, index) => (
+                    <li
+                      key={module}
+                      className="flex items-baseline gap-4 border-b border-border py-4"
+                    >
+                      <span className="eyebrow shrink-0">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="font-medium">{module}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6">
-              {/* What You Get */}
-              <Card className="shadow-card animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-xl">
-                    <Heart className="w-5 h-5 text-primary" />
-                    מה מקבלים
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {detail.whatYouGet.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+              <div className="space-y-4">
+                <p className="eyebrow">מה מקבלים</p>
+                <ul className="space-y-3">
+                  {detail.whatYouGet.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                      <Check className="w-4 h-4 mt-1 text-primary shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              {/* CTA Card */}
-              <Card className="shadow-glow gradient-card border-primary/20 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-                <CardHeader>
-                  <CardTitle className="text-xl">רוצה לשמוע עוד?</CardTitle>
-                  <CardDescription>
-                    בואי נדבר ונראה אם הקורס מתאים לך
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <Button className="w-full gradient-primary shadow-lg rounded-full">
-                    צרי קשר
-                  </Button>
-                  <p className="text-xs text-center text-muted-foreground">
-                    בלי התחייבות, רק שיחה
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+              <div className="rounded-2xl border border-border bg-secondary p-6 space-y-4">
+                <h2 className="text-lg font-semibold">רוצה לשמוע עוד?</h2>
+                <p className="text-sm text-muted-foreground">
+                  בואי נדבר ונראה אם הקורס מתאים לך.
+                </p>
+                <Button className="w-full rounded-lg">צרי קשר</Button>
+                <p className="text-xs text-muted-foreground">בלי התחייבות, רק שיחה</p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Clock } from "lucide-react";
@@ -11,67 +10,68 @@ interface CourseCardProps {
   duration: string;
   level: string;
   image: string;
+  /** CSS object-position for the cover crop. The photos are portrait, the card is
+      landscape, so the default 50% 50% cuts the nails off. */
+  objectPosition?: string;
   comingSoon?: boolean;
 }
 
-export const CourseCard = ({ id, title, description, duration, level, image, comingSoon }: CourseCardProps) => {
+export const CourseCard = ({
+  id,
+  title,
+  description,
+  duration,
+  level,
+  image,
+  objectPosition = "50% 50%",
+  comingSoon,
+}: CourseCardProps) => {
   return (
-    <Card
-      className={`group overflow-hidden border-border/40 backdrop-blur-sm bg-card/80 transition-all duration-500 animate-fade-in-up ${
-        comingSoon ? "opacity-90" : "hover:shadow-glow hover:-translate-y-2"
-      }`}
+    <article
+      className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card animate-fade-in-up"
       dir="rtl"
     >
-      <div className="relative h-48 overflow-hidden rounded-t-lg">
-        <div className="absolute inset-0 gradient-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+      <div className="relative h-52 md:h-64 overflow-hidden border-b border-border">
         <img
           src={image}
           alt={title}
-          className={`w-full h-full object-cover transition-transform duration-700 ${
-            comingSoon ? "grayscale opacity-60" : "group-hover:scale-110"
+          style={{ objectPosition }}
+          className={`w-full h-full object-cover transition-transform duration-500 ${
+            comingSoon ? "grayscale opacity-70" : "group-hover:scale-[1.04]"
           }`}
         />
         <Badge
-          className={`absolute top-4 left-4 z-20 ${
-            comingSoon ? "bg-muted text-muted-foreground" : "bg-primary text-primary-foreground"
-          }`}
+          variant={comingSoon ? "secondary" : "default"}
+          className="absolute top-3 left-3 rounded-full font-normal"
         >
           {comingSoon ? "בקרוב" : level}
         </Badge>
       </div>
-      <CardHeader>
-        <CardTitle
-          className={`text-xl transition-colors duration-300 ${comingSoon ? "" : "group-hover:text-primary"}`}
-        >
-          {title}
-        </CardTitle>
-        <CardDescription className="line-clamp-2">{description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
-            <span>{duration}</span>
-          </div>
+
+      <div className="flex flex-1 flex-col gap-3 p-6">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
+
+        <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+          <Clock className="w-4 h-4" />
+          <span>{duration}</span>
         </div>
-      </CardContent>
-      <CardFooter>
-        {comingSoon ? (
-          <Button disabled variant="secondary" className="w-full cursor-not-allowed">
-            בקרוב
-          </Button>
-        ) : (
-          <Button
-            asChild
-            className="w-full group/btn gradient-primary border-0 shadow-lg hover:shadow-glow transition-all duration-300"
-          >
-            <Link to={`/course/${id}`} className="flex items-center justify-center gap-2">
-              למידע נוסף
-              <ArrowRight className="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform" />
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
+
+        <div className="mt-auto pt-4">
+          {comingSoon ? (
+            <Button disabled variant="secondary" className="w-full rounded-lg">
+              בקרוב
+            </Button>
+          ) : (
+            <Button asChild className="w-full rounded-lg group/btn">
+              <Link to={`/course/${id}`} className="flex items-center justify-center gap-2">
+                למידע נוסף
+                <ArrowRight className="w-4 h-4 group-hover/btn:-translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          )}
+        </div>
+      </div>
+    </article>
   );
 };
