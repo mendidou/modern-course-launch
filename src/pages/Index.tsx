@@ -44,7 +44,7 @@ const Index = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative overflow-hidden gradient-hero border-b border-border">
+      <section className="relative overflow-hidden">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
@@ -88,7 +88,7 @@ const Index = () => {
       </section>
 
       {/* Why private */}
-      <section id="why" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24 border-b border-border">
+      <section id="why" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
@@ -117,7 +117,7 @@ const Index = () => {
       </section>
 
       {/* Courses */}
-      <section id="courses" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
+      <section id="courses" className="scroll-mt-24 py-20 md:py-24">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">הקורסים</p>
@@ -139,7 +139,7 @@ const Index = () => {
       </section>
 
       {/* What you learn */}
-      <section className="py-20 md:py-24 border-b border-border">
+      <section className="py-20 md:py-24">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">תוכן הקורס</p>
@@ -171,7 +171,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="relative overflow-hidden py-20 md:py-24 border-b border-border">
+      <section className="relative overflow-hidden py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
@@ -197,7 +197,7 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24 border-b border-border">
+      <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-10">
@@ -214,7 +214,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="relative overflow-hidden scroll-mt-24 gradient-hero py-20 md:py-28">
+      <section id="contact" className="relative overflow-hidden scroll-mt-24 py-20 md:py-28">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-6">
@@ -234,7 +234,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="border-t border-border py-10">
+      <footer className="py-10">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm text-muted-foreground">
             <p>© 2024 כל הזכויות שמורות</p>

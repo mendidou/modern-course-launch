@@ -67,7 +67,7 @@ const CourseDetail = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative overflow-hidden gradient-hero border-b border-border">
+      <section className="relative overflow-hidden">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4 py-12">
           {backLink}
@@ -133,7 +133,7 @@ const CourseDetail = () => {
                   {detail.modules.map((module, index) => (
                     <li
                       key={module}
-                      className="flex items-baseline gap-4 border-b border-border py-4"
+                      className="flex items-baseline gap-4 py-4"
                     >
                       <span className="eyebrow shrink-0">
                         {String(index + 1).padStart(2, "0")}
