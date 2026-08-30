@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
 import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { getCourse } from "@/data/courses";
+import { whatsappLink } from "@/data/contact";
 
 const CourseDetail = () => {
   const { id } = useParams();
@@ -50,8 +51,10 @@ const CourseDetail = () => {
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
                 <Link to="/course/1">לקורס מניקור ולק ג'ל</Link>
               </Button>
-              <Button size="lg" variant="outline" className="rounded-2xl px-7 bg-card shadow-card">
-                עדכנו אותי כשנפתח
+              <Button asChild size="lg" variant="outline" className="rounded-2xl px-7 bg-card shadow-card">
+                <a href={whatsappLink()} target="_blank" rel="noreferrer">
+                  עדכנו אותי כשנפתח
+                </a>
               </Button>
             </div>
           </div>
@@ -90,8 +93,10 @@ const CourseDetail = () => {
               </div>
 
               <div className="pt-2">
-                <Button size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
-                  צרי קשר לפרטים
+                <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
+                  <a href={whatsappLink()} target="_blank" rel="noreferrer">
+                    צרי קשר לפרטים
+                  </a>
                 </Button>
               </div>
             </div>
@@ -164,7 +169,11 @@ const CourseDetail = () => {
                 <p className="text-sm text-muted-foreground">
                   בואי נדבר ונראה אם הקורס מתאים לך.
                 </p>
-                <Button className="w-full gradient-primary shadow-glow rounded-2xl">צרי קשר</Button>
+                <Button asChild className="w-full gradient-primary shadow-glow rounded-2xl">
+                  <a href={whatsappLink()} target="_blank" rel="noreferrer">
+                    צרי קשר בוואטסאפ
+                  </a>
+                </Button>
                 <p className="text-xs text-muted-foreground">בלי התחייבות, רק שיחה</p>
               </div>
             </aside>

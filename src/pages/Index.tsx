@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
+import { whatsappLink } from "@/data/contact";
 import heroImage from "@/assets/hero-nails.jpg";
 import syllabusImage from "@/assets/course-gel-polish.jpg";
 
@@ -66,7 +67,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
-                <a href="#contact">בואי נדבר</a>
+                <a href={whatsappLink()} target="_blank" rel="noreferrer">בואי נדבר</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-2xl text-base px-7 bg-card shadow-card">
                 <a href="#courses">הקורסים שלי</a>
@@ -287,8 +288,10 @@ const Index = () => {
               בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
             </p>
             <div className="flex justify-center">
-              <Button size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
-                צרי קשר
+              <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
+                <a href={whatsappLink()} target="_blank" rel="noreferrer">
+                  צרי קשר בוואטסאפ
+                </a>
               </Button>
             </div>
           </Reveal>
