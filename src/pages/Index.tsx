@@ -107,22 +107,6 @@ const Index = () => {
             </p>
           </Reveal>
 
-          <Reveal className="mb-10">
-            <figure className="relative max-w-3xl overflow-hidden rounded-3xl border border-primary/30 gradient-card p-7 shadow-card md:p-9">
-              <Quote className="absolute end-6 top-6 h-10 w-10 text-primary/15" aria-hidden="true" />
-              <blockquote className="relative text-xl font-medium leading-relaxed md:text-2xl">
-                אני מלמדת רק אחת על אחת כי כדי שהיד שלך תעבוד נכון, מישהי צריכה לעמוד לידך
-                ולתקן בזמן אמת. את זה אי אפשר לעשות לעשר תלמידות במקביל.
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
-                <span className="h-px w-8 bg-primary/40" />
-                <span className="font-medium text-foreground">רבקה</span>
-                <span aria-hidden="true">·</span>
-                <span className="wordmark text-lg text-primary">rbknails</span>
-              </figcaption>
-            </figure>
-          </Reveal>
-
           <Reveal>
             <div className="flex flex-wrap gap-2">
               {axes.map((axis) => (
@@ -161,6 +145,22 @@ const Index = () => {
                 VS
               </span>
             </div>
+          </Reveal>
+
+          <Reveal className="mt-12">
+            <figure className="max-w-3xl">
+              <Quote className="h-8 w-8 text-primary/25" aria-hidden="true" />
+              <blockquote className="mt-3 text-xl font-medium leading-relaxed text-foreground/70 md:text-2xl">
+                אני מלמדת רק אחת על אחת כי כדי שהיד שלך תעבוד נכון, מישהי צריכה לעמוד לידך
+                ולתקן בזמן אמת. את זה אי אפשר לעשות לעשר תלמידות במקביל.
+              </blockquote>
+              <figcaption className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
+                <span className="h-px w-8 bg-primary/40" />
+                <span className="font-medium text-foreground/80">רבקה</span>
+                <span aria-hidden="true">·</span>
+                <span className="wordmark text-lg text-primary">rbknails</span>
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>
