@@ -212,6 +212,13 @@ subtle two-stop gradient on the primary surfaces.
     }
   }
 
+  /* Wordmark. Script face, so it needs a size bump to match the surrounding UI. */
+  .wordmark {
+    font-family: "Dancing Script", ui-rounded, cursive;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
   /* Small caps label above a section title. */
   .eyebrow {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
