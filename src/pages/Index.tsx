@@ -116,33 +116,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What you learn */}
-      <section className="py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-12">
-            <p className="eyebrow">תוכן הקורס</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              מה נלמד בקורס המניקור הבסיסי.
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
-              בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
-            </p>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {highlights.map((item, index) => (
-              <Reveal key={item.title} className="h-full">
-                <div className="h-full space-y-3 rounded-3xl border border-border bg-card p-6 shadow-card">
-                  <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Courses */}
       <section id="courses" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
@@ -165,9 +138,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* What you learn */}
       <section className="py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
+          <Reveal className="max-w-2xl space-y-4 mb-12">
+            <p className="eyebrow">תוכן הקורס</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              מה נלמד בקורס המניקור הבסיסי.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
+              בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
+            </p>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {highlights.map((item, index) => (
+              <Reveal key={item.title} className="h-full">
+                <div className="flex h-full flex-col gap-3 rounded-3xl border border-border gradient-card p-6 shadow-card">
+                  <div className="flex items-center justify-between">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <span className="eyebrow">{String(index + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="relative overflow-hidden py-20 md:py-24 border-b border-border">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">לקוחות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -191,8 +197,9 @@ const Index = () => {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
+      <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24 border-b border-border">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-10">
             <p className="eyebrow">שאלות נפוצות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, Check, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { getCourse } from "@/data/courses";
 
 const CourseDetail = () => {
@@ -66,8 +67,9 @@ const CourseDetail = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="gradient-hero border-b border-border">
-        <div className="container mx-auto max-w-6xl px-4 py-12">
+      <section className="relative overflow-hidden gradient-hero border-b border-border">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4 py-12">
           {backLink}
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
