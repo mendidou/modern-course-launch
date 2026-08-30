@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
 import { Heart, Clock, UserCheck, Sparkles, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Testimonials } from "@/components/Testimonials";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
 
@@ -172,6 +173,31 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-4 mb-12 animate-fade-in-up" dir="rtl">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              מה אומרות
+              <span className="gradient-text"> הלקוחות שלי</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              תגובות אמיתיות שנכתבו על העבודות שלי באינסטגרם{" "}
+              <a
+                href="https://www.instagram.com/rbknails/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-primary hover:underline"
+                dir="ltr"
+              >
+                @rbknails
+              </a>
+            </p>
+          </div>
+          <Testimonials />
         </div>
       </section>
 
