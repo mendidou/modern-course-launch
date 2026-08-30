@@ -131,6 +131,8 @@ const Index = () => {
               </blockquote>
               <figcaption className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
                 <span className="h-px w-8 bg-primary/40" />
+                <span className="font-medium text-foreground">רבקה</span>
+                <span aria-hidden="true">·</span>
                 <span className="wordmark text-lg text-primary">rbknails</span>
               </figcaption>
             </figure>
