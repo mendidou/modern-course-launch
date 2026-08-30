@@ -10,26 +10,27 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
 
-/** One row per point, read down each column. */
+/** One row per point, read down each column. Kept to one short line a side:
+    the contrast lands faster than a paragraph does. */
 const comparison = [
   {
     label: "תשומת לב",
-    private: "כל המפגש מוקדש רק לך ולהתקדמות שלך",
-    group: "המורה מתחלקת בין כמה תלמידות באותו זמן",
+    private: "כל המפגש מוקדש רק לך",
+    group: "המורה מתחלקת בין כמה תלמידות",
   },
   {
     label: "קצב",
-    private: "מתקדמות בקצב שלך, עוצרים איפה שצריך",
-    group: "הקצב נקבע לפי הקבוצה, לא לפיך",
+    private: "מתקדמות בקצב שלך",
+    group: "הקצב נקבע לפי הקבוצה",
   },
   {
     label: "תרגול",
-    private: "את עובדת בידיים בכל מפגש, עם תיקון תוך כדי",
-    group: "הרבה מהזמן מסתכלים, ומתרגלים בתור",
+    private: "את עובדת בידיים בכל מפגש",
+    group: "מסתכלים, ומתרגלים בתור",
   },
   {
     label: "אחרי המפגש",
-    private: "אני זמינה לשאלות בין המפגשים וגם אחרי הקורס",
+    private: "זמינה לשאלות גם בין המפגשים",
     group: "מה שלא נשאל בכיתה נשאר פתוח",
   },
 ];
@@ -110,7 +111,7 @@ const Index = () => {
       <section id="why" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="max-w-2xl space-y-4 mb-8">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               ההבדל בין קורס קבוצתי לקורס אחת על אחת.
@@ -133,21 +134,21 @@ const Index = () => {
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {comparison.map((row) => (
                 <div
                   key={row.label}
                   className="grid overflow-hidden rounded-3xl border border-border shadow-card sm:grid-cols-2"
                 >
-                  <div className="gradient-card border-b border-border p-5 sm:border-b-0 sm:border-e">
-                    <p className="eyebrow mb-2">{row.label}</p>
+                  <div className="gradient-card border-b border-border px-5 py-4 sm:border-b-0 sm:border-e">
+                    <p className="eyebrow mb-1.5">{row.label}</p>
                     <p className="flex items-start gap-2 font-medium">
                       <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                       {row.private}
                     </p>
                   </div>
-                  <div className="bg-card/40 p-5">
-                    <p className="eyebrow mb-2 sm:invisible">בקורס קבוצתי</p>
+                  <div className="bg-card/40 px-5 py-4">
+                    <p className="eyebrow mb-1.5 sm:invisible">בקורס קבוצתי</p>
                     <p className="flex items-start gap-2 text-muted-foreground">
                       <Minus className="mt-0.5 h-5 w-5 shrink-0" />
                       {row.group}
