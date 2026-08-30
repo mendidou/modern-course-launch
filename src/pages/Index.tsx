@@ -1,6 +1,7 @@
+import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
-import { Heart, Clock, UserCheck, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
+import { Check, Minus, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Reveal } from "@/components/Reveal";
@@ -9,10 +10,28 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
 
-const benefits = [
-  { icon: UserCheck, title: "תשומת לב מלאה", desc: "כל המפגש מוקדש רק לך ולהתקדמות שלך" },
-  { icon: Clock, title: "בקצב שלך", desc: "לא צריך לרוץ או לחכות, מתקדמים יחד" },
-  { icon: Heart, title: "ליווי אישי", desc: "אני כאן בשבילך גם בין המפגשים" },
+/** One row per point, read down each column. */
+const comparison = [
+  {
+    label: "תשומת לב",
+    private: "כל המפגש מוקדש רק לך ולהתקדמות שלך",
+    group: "המורה מתחלקת בין כמה תלמידות באותו זמן",
+  },
+  {
+    label: "קצב",
+    private: "מתקדמות בקצב שלך, עוצרים איפה שצריך",
+    group: "הקצב נקבע לפי הקבוצה, לא לפיך",
+  },
+  {
+    label: "תרגול",
+    private: "את עובדת בידיים בכל מפגש, עם תיקון תוך כדי",
+    group: "הרבה מהזמן מסתכלים, ומתרגלים בתור",
+  },
+  {
+    label: "אחרי המפגש",
+    private: "אני זמינה לשאלות בין המפגשים וגם אחרי הקורס",
+    group: "מה שלא נשאל בכיתה נשאר פתוח",
+  },
 ];
 
 const highlights = [
@@ -94,25 +113,38 @@ const Index = () => {
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              שלוש סיבות שבגללן אני מלמדת אחת על אחת.
+              ההבדל בין קורס קבוצתי לקורס אחת על אחת.
             </h2>
             <p className="text-lg text-muted-foreground">
-              אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב.
+              אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב. ככה זה נראה בפועל.
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {benefits.map((item) => (
-              <Reveal key={item.title} className="h-full">
-                <div className="h-full rounded-3xl border border-border gradient-card p-7 space-y-3 shadow-card">
-                <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl gradient-primary text-primary-foreground shadow-glow">
-                  <item.icon className="w-5 h-5" />
-                </span>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+
+          <Reveal>
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+              <h3 className="flex items-center gap-2 text-lg font-semibold">
+                <Check className="h-5 w-5 text-primary" />
+                אצלי, אחת על אחת
+              </h3>
+              <h3 className="hidden items-center gap-2 text-lg font-semibold text-muted-foreground sm:flex">
+                <Minus className="h-5 w-5" />
+                בקורס קבוצתי
+              </h3>
+
+              {comparison.map((row) => (
+                <Fragment key={row.label}>
+                  <div className="rounded-3xl border border-primary/30 gradient-card p-5 shadow-card">
+                    <p className="eyebrow mb-1.5">{row.label}</p>
+                    <p className="font-medium">{row.private}</p>
+                  </div>
+                  <div className="rounded-3xl border border-border bg-card/50 p-5">
+                    <p className="eyebrow mb-1.5 sm:hidden">בקורס קבוצתי</p>
+                    <p className="text-muted-foreground">{row.group}</p>
+                  </div>
+                </Fragment>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
