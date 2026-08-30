@@ -127,6 +127,15 @@ All colors MUST be HSL.
     background: var(--gradient-primary);
   }
   
+  /* Gradient text. `gradient-primary bg-clip-text` does not work: the `background`
+     shorthand above resets `background-clip`, so the text renders as a solid block. */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .gradient-hero {
     background: var(--gradient-hero);
   }

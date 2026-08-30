@@ -3,79 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, CheckCircle2, BookOpen, Heart } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-
-const coursesData: Record<string, any> = {
-  "1": {
-    title: "ג'ל ולק ג'ל",
-    description: "למדי את הטכניקות של ג'ל ולק ג'ל בליווי אישי וצמוד.",
-    longDescription: "בקורס הפרטי הזה תלמדי לבנות ציפורניים בטכניקת ג'ל ולק ג'ל. נלמד את כל השלבים יחד, בקצב שלך, עם כל הזמן שאת צריכה להבין ולתרגל. הקורס מותאם אישית לרמה שלך.",
-    duration: "מספר מפגשים אישיים",
-    level: "למתחילות",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&h=600&fit=crop",
-    modules: [
-      "היכרות עם חומרי ג'ל ולק ג'ל",
-      "הכנת הציפורן למריחה",
-      "טכניקות מריחה",
-      "עבודה עם מנורת UV/LED",
-      "תיקון ציפורניים",
-      "שילובי צבעים וגימורים",
-    ],
-    whatYouGet: [
-      "ליווי אישי אחד על אחד",
-      "תרגול מעשי בכל מפגש",
-      "זמינות לשאלות גם בין המפגשים",
-      "חומרים לתרגול בזמן הקורס",
-    ],
-  },
-  "2": {
-    title: "נייל ארט ועיצוב",
-    description: "פתחי את היצירתיות שלך עם טכניקות עיצוב בקורס פרטי.",
-    longDescription: "קורס פרטי שבו נלמד יחד טכניקות נייל ארט מגוונות. נתאים את הקצב והתוכן בדיוק למה שאת רוצה ללמוד ולהתפתח בו.",
-    duration: "מספר מפגשים אישיים",
-    level: "למתקדמות",
-    image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1200&h=600&fit=crop",
-    modules: [
-      "עקרונות העיצוב והצבע",
-      "טכניקות ציור על ציפורן",
-      "עבודה עם סטמפינג",
-      "שימוש באביזרים",
-      "עיצובים גיאומטריים",
-      "גרדיאנט ואומברה",
-    ],
-    whatYouGet: [
-      "ליווי אישי אחד על אחד",
-      "תרגול מעשי בכל מפגש",
-      "זמינות לשאלות גם בין המפגשים",
-      "חומרים לתרגול בזמן הקורס",
-    ],
-  },
-  "3": {
-    title: "הארכות ציפורניים",
-    description: "למדי טכניקות בניה והארכה עם תרגול מעשי.",
-    longDescription: "קורס פרטי ללימוד טכניקות הארכה. נלמד יחד בקצב שלך, עם דגש על תרגול מעשי והבנה מעמיקה של כל שלב.",
-    duration: "מספר מפגשים אישיים",
-    level: "למתקדמות",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=1200&h=600&fit=crop",
-    modules: [
-      "סוגי הארכות ושימושים",
-      "בניה על תבנית",
-      "בניה על טיפסים",
-      "יצירת צורות",
-      "פילינג והסרה נכונה",
-      "תחזוקה ותיקונים",
-    ],
-    whatYouGet: [
-      "ליווי אישי אחד על אחד",
-      "תרגול מעשי בכל מפגש",
-      "זמינות לשאלות גם בין המפגשים",
-      "חומרים לתרגול בזמן הקורס",
-    ],
-  },
-};
+import { getCourse } from "@/data/courses";
 
 const CourseDetail = () => {
   const { id } = useParams();
-  const course = coursesData[id || "1"];
+  const course = getCourse(id);
 
   if (!course) {
     return (
@@ -89,6 +21,41 @@ const CourseDetail = () => {
       </div>
     );
   }
+
+  if (!course.detail) {
+    return (
+      <div className="min-h-screen gradient-hero" dir="rtl">
+        <div className="container mx-auto px-4 py-8">
+          <Button asChild variant="ghost" className="mb-6 hover:bg-secondary/80">
+            <Link to="/" className="flex items-center gap-2">
+              <ArrowLeft className="w-4 h-4 rotate-180" />
+              חזרה לדף הבית
+            </Link>
+          </Button>
+
+          <div className="max-w-2xl mx-auto text-center space-y-6 py-16 animate-fade-in-up">
+            <Badge className="bg-muted text-muted-foreground">בקרוב</Badge>
+            <h1 className="text-4xl md:text-5xl font-bold">{course.title}</h1>
+            <p className="text-xl text-muted-foreground">{course.description}</p>
+            <p className="text-muted-foreground">
+              הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס המניקור הבסיסי, או להשאיר פרטים
+              ולהיות מהראשונות שיֵדעו כשנפתחת הרשמה.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button asChild size="lg" className="gradient-primary shadow-glow rounded-full px-8">
+                <Link to="/course/1">לקורס מניקור בסיסי</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-full px-8 border-2">
+                עדכנו אותי כשנפתח
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const { detail } = course;
 
   return (
     <div className="min-h-screen" dir="rtl">
@@ -110,7 +77,7 @@ const CourseDetail = () => {
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold">{course.title}</h1>
               <p className="text-xl text-muted-foreground">{course.description}</p>
-              
+
               <div className="flex items-center gap-6 text-sm">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
@@ -132,7 +99,7 @@ const CourseDetail = () => {
             <div className="relative animate-scale-in">
               <div className="absolute inset-0 gradient-card rounded-3xl opacity-50 blur-2xl" />
               <img
-                src={course.image}
+                src={detail.image}
                 alt={course.title}
                 className="relative rounded-3xl shadow-card w-full"
               />
@@ -156,7 +123,7 @@ const CourseDetail = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground leading-relaxed">
-                    {course.longDescription}
+                    {detail.longDescription}
                   </p>
                 </CardContent>
               </Card>
@@ -166,12 +133,12 @@ const CourseDetail = () => {
                 <CardHeader>
                   <CardTitle className="text-2xl">מה נלמד</CardTitle>
                   <CardDescription>
-                    נושאים מרכזיים שנעבור עליהם יחד
+                    ראשי הפרקים שנעבור יחד — את התוכן המלא לומדים במפגשים
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {course.modules.map((module: string, index: number) => (
+                    {detail.modules.map((module, index) => (
                       <div
                         key={index}
                         className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
@@ -202,7 +169,7 @@ const CourseDetail = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
-                    {course.whatYouGet.map((item: string, index: number) => (
+                    {detail.whatYouGet.map((item, index) => (
                       <li key={index} className="flex items-center gap-2 text-muted-foreground">
                         <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                         <span>{item}</span>

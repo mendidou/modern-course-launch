@@ -1,39 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
-import { ArrowRight, Heart, Clock, UserCheck, Sparkles } from "lucide-react";
+import { Heart, Clock, UserCheck, Sparkles, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-
-const courses = [
-  {
-    id: "1",
-    title: "ג'ל ולק ג'ל",
-    description: "למדי את הטכניקות של ג'ל ולק ג'ל בליווי אישי וצמוד.",
-    duration: "מספר מפגשים",
-    level: "למתחילות",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=400&fit=crop",
-  },
-  {
-    id: "2",
-    title: "נייל ארט ועיצוב",
-    description: "פתחי את היצירתיות שלך עם טכניקות עיצוב בקורס פרטי.",
-    duration: "מספר מפגשים",
-    level: "למתקדמות",
-    image: "https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=800&h=400&fit=crop",
-  },
-  {
-    id: "3",
-    title: "הארכות ציפורניים",
-    description: "למדי טכניקות בניה והארכה עם תרגול מעשי.",
-    duration: "מספר מפגשים",
-    level: "למתקדמות",
-    image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=800&h=400&fit=crop",
-  },
-];
+import { courses } from "@/data/courses";
+import learnImage from "@/assets/hero-nails.jpg";
 
 const benefits = [
   { icon: UserCheck, title: "תשומת לב מלאה", desc: "כל המפגש מוקדש רק לך ולהתקדמות שלך" },
   { icon: Clock, title: "בקצב שלך", desc: "לא צריך לרוץ או לחכות - מתקדמים יחד" },
   { icon: Heart, title: "ליווי אישי", desc: "אני כאן בשבילך גם בין המפגשים" },
+];
+
+const highlights = [
+  {
+    icon: Layers,
+    title: "להבין על מה עובדים",
+    desc: "המבנה האנטומי של הציפורן — הבסיס לכל טיפול נקי ובטוח",
+  },
+  {
+    icon: ShieldCheck,
+    title: "לעבוד בטוח",
+    desc: "היגיינה, חיטוי ועיקור כלים, וזיהוי מצבים שבהם אסור לטפל",
+  },
+  {
+    icon: Brush,
+    title: "טכניקה ותוצאה",
+    desc: "מניקור משולב, שיוף וצורות, מבנה אנטומי ומריחת צבע אחידה",
+  },
+  {
+    icon: BookOpen,
+    title: "חוברת עבודה",
+    desc: "חוברת מלאה ללומדת שנשארת איתך גם אחרי סוף הקורס",
+  },
 ];
 
 const Index = () => {
@@ -47,17 +45,16 @@ const Index = () => {
             <div className="inline-block">
               <Badge className="gradient-primary text-primary-foreground px-4 py-1.5 text-sm font-medium shadow-glow">
                 <Heart className="w-4 h-4 ml-2 inline" />
-                קורסים פרטיים ואישיים
+                קורס מניקור בסיסי — נפתח להרשמה
               </Badge>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              למדי ציפורניים
-              <span className="gradient-primary bg-clip-text text-transparent"> בקצב שלך</span>
+              למדי מניקור מהבסיס
+              <span className="gradient-text"> בקצב שלך</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              קורסים פרטיים אחד על אחד, עם ליווי אישי וצמוד. 
-              אני מאמינה שהדרך הטובה ביותר ללמוד היא בסביבה אינטימית 
-              שמאפשרת לך לקבל את כל הכלים שאת צריכה להצליח.
+              קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות — אנטומיה, היגיינה
+              וטכניקה נכונה — כדי שתגיעי לתוצאה מקצועית ובטוחה, בביטחון מלא.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="gradient-primary shadow-glow text-lg px-8 py-6 rounded-full group">
@@ -69,7 +66,7 @@ const Index = () => {
               </Button>
             </div>
           </div>
-          
+
           {/* Floating Elements */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
@@ -82,7 +79,7 @@ const Index = () => {
           <div className="text-center space-y-4 mb-12 animate-fade-in-up" dir="rtl">
             <h2 className="text-3xl md:text-4xl font-bold">
               למה קורס
-              <span className="gradient-primary bg-clip-text text-transparent"> פרטי?</span>
+              <span className="gradient-text"> פרטי?</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב
@@ -90,8 +87,8 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {benefits.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="text-center space-y-4 p-6 rounded-3xl bg-card/80 shadow-card animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 dir="rtl"
@@ -107,16 +104,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Courses Section */}
+      {/* What You Learn Section */}
       <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center" dir="rtl">
+            <div className="space-y-8 animate-fade-in-up">
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  מה נלמד בקורס
+                  <span className="gradient-text"> המניקור הבסיסי?</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
+                  בתיאוריה ובתרגול מעשי — את התוכן המלא נעבור במפגשים.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {highlights.map((item, index) => (
+                  <div
+                    key={index}
+                    className="space-y-3 p-5 rounded-2xl bg-card/80 shadow-card animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl gradient-primary text-primary-foreground">
+                      <item.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative animate-scale-in">
+              <div className="absolute inset-0 gradient-card rounded-3xl opacity-50 blur-2xl" />
+              <img
+                src={learnImage}
+                alt="תוצאה של מניקור מקצועי"
+                className="relative rounded-3xl shadow-card w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section className="py-24 bg-secondary/30 border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16 animate-fade-in-up" dir="rtl">
             <h2 className="text-4xl md:text-5xl font-bold">
               הקורסים
-              <span className="gradient-primary bg-clip-text text-transparent"> שלי</span>
+              <span className="gradient-text"> שלי</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              כל קורס מותאם אישית לרמה ולצרכים שלך
+              כרגע נפתח להרשמה קורס המניקור הבסיסי. שאר הקורסים בדרך — ואפשר להשאיר פרטים
+              ולהיות הראשונות לדעת.
             </p>
           </div>
 
@@ -138,7 +179,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto text-center space-y-8 animate-fade-in-up" dir="rtl">
             <h2 className="text-4xl md:text-5xl font-bold">
               רוצה לשמוע
-              <span className="gradient-primary bg-clip-text text-transparent"> עוד?</span>
+              <span className="gradient-text"> עוד?</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.

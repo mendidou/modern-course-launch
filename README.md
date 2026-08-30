@@ -1,10 +1,11 @@
-# 💅 Modern Course Launch — Private Manicure Training
+# 💅 קורס מניקור בסיסי — Landing Page
 
 ## About This Project
-A high-converting landing page for a **premium 1:1 private manicure course**.
+A landing page for a **private 1:1 manicure course**.
 
-- One-on-one private training (beginner & improvement levels)
-- Home-based, highly personalized sessions
+- One-on-one private training, at the student's own pace
+- Currently open for registration: **מניקור בסיסי** (basic manicure)
+- Other courses (gel polish, nail art, extensions) are shown as "coming soon"
 - Positioned as premium — not a mass-market school
 
 ## Goal
@@ -17,10 +18,22 @@ A high-converting landing page for a **premium 1:1 private manicure course**.
 - Vite
 - Tailwind CSS
 - shadcn/ui
-- Built & deployed via [Lovable](https://lovable.dev/projects/fddd8849-2fe2-4e72-a333-3af0feb729c4)
 
-## Live Preview
-https://round-magic-landing.lovable.app/
+## Live Site
+https://mendidou.github.io/modern-course-launch/
 
-## Strategy Docs
-_Landing page structure, marketing playbooks, and SOPs will be added to `/docs` folder._
+## Local Development
+```bash
+npm install
+npm run dev      # http://localhost:8080
+npm run build    # production build into dist/
+```
+
+## Deployment
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and
+publishes it to GitHub Pages. The Vite `base` is `/modern-course-launch/`, and the build
+copies `index.html` to `404.html` so client-side routes (e.g. `/course/1`) work on Pages.
+
+## Content
+Course content lives in `src/data/courses.ts` (titles, descriptions, modules, images).
+Course photos are in `src/assets/`.
