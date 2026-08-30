@@ -11,30 +11,15 @@ import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
 import syllabusImage from "@/assets/course-gel-polish.jpg";
 
-/** One row per point, read down each column. Kept to one short line a side:
-    the contrast lands faster than a paragraph does. */
-const comparison = [
-  {
-    label: "תשומת לב",
-    private: "כל המפגש מוקדש רק לך",
-    group: "המורה מתחלקת בין כמה תלמידות",
-  },
-  {
-    label: "קצב",
-    private: "מתקדמות בקצב שלך",
-    group: "הקצב נקבע לפי הקבוצה",
-  },
-  {
-    label: "תרגול",
-    private: "את עובדת בידיים בכל מפגש",
-    group: "מסתכלים, ומתרגלים בתור",
-  },
-  {
-    label: "אחרי המפגש",
-    private: "זמינה לשאלות גם בין המפגשים",
-    group: "מה שלא נשאל בכיתה נשאר פתוח",
-  },
-];
+/** The four axes the two formats differ on, kept as chips above the summaries. */
+const axes = ["תשומת לב", "קצב", "תרגול", "ליווי"];
+
+const sides = {
+  private:
+    "המפגש כולו שלך. מתקדמות בקצב שלך, את עובדת בידיים ואני מתקנת תוך כדי, ואני זמינה לשאלות גם בין המפגשים.",
+  group:
+    "המורה מתחלקת בין כמה תלמידות, הקצב נקבע לפי הקבוצה, מתרגלים בתור, ומה שלא נשאל בכיתה נשאר פתוח.",
+};
 
 const highlights = [
   {
@@ -139,40 +124,42 @@ const Index = () => {
           </Reveal>
 
           <Reveal>
-            {/* Column headers only make sense once the two sides sit side by side. */}
-            <div className="mb-4 hidden gap-6 sm:grid sm:grid-cols-2">
-              <h3 className="flex items-center gap-2 text-lg font-semibold">
-                <Check className="h-5 w-5 text-primary" />
-                אצלי, אחת על אחת
-              </h3>
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-muted-foreground">
-                <Minus className="h-5 w-5" />
-                בקורס קבוצתי
-              </h3>
+            <div className="flex flex-wrap gap-2">
+              {axes.map((axis) => (
+                <span
+                  key={axis}
+                  className="rounded-full border border-border bg-card/70 px-3 py-1 text-sm text-muted-foreground"
+                >
+                  {axis}
+                </span>
+              ))}
             </div>
 
-            <div className="space-y-3">
-              {comparison.map((row) => (
-                <div
-                  key={row.label}
-                  className="grid overflow-hidden rounded-3xl border border-border shadow-card sm:grid-cols-2"
-                >
-                  <div className="gradient-card border-b border-border px-5 py-4 sm:border-b-0 sm:border-e">
-                    <p className="eyebrow mb-1.5">{row.label}</p>
-                    <p className="flex items-start gap-2 font-medium">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                      {row.private}
-                    </p>
-                  </div>
-                  <div className="bg-card/40 px-5 py-4">
-                    <p className="eyebrow mb-1.5 sm:invisible">בקורס קבוצתי</p>
-                    <p className="flex items-start gap-2 text-muted-foreground">
-                      <Minus className="mt-0.5 h-5 w-5 shrink-0" />
-                      {row.group}
-                    </p>
-                  </div>
-                </div>
-              ))}
+            <div className="relative mt-6 grid items-stretch gap-4 sm:grid-cols-2 sm:gap-6">
+              <div className="rounded-3xl border border-primary/30 gradient-card p-6 shadow-card sm:p-7">
+                <h3 className="flex items-center gap-2 text-lg font-semibold">
+                  <Check className="h-5 w-5 shrink-0 text-primary" />
+                  אצלי, אחת על אחת
+                </h3>
+                <p className="mt-3 font-medium leading-relaxed">{sides.private}</p>
+              </div>
+
+              <div className="rounded-3xl border border-border bg-card/40 p-6 sm:p-7">
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-muted-foreground">
+                  <Minus className="h-5 w-5 shrink-0" />
+                  בקורס קבוצתי
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">{sides.group}</p>
+              </div>
+
+              {/* Centred on the seam: on the horizontal gap at sm and up, on the
+                  vertical one below it. */}
+              <span
+                className="pointer-events-none absolute left-1/2 top-1/2 z-10 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full gradient-primary text-sm font-semibold text-primary-foreground shadow-glow ring-4 ring-background"
+                aria-hidden="true"
+              >
+                VS
+              </span>
             </div>
           </Reveal>
         </div>
