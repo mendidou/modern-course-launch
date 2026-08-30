@@ -53,34 +53,29 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
-          <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
-            <div className="space-y-5 animate-fade-in-up">
-              <p className="eyebrow">קורס מניקור ולק ג'ל, נפתח להרשמה</p>
-              <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
-                למדי מניקור מהבסיס,
-                <br />
-                <span className="gradient-text">בקצב שלך.</span>
-              </h1>
-            </div>
-
-            <div className="space-y-6">
-              <p className="text-base md:text-lg text-muted-foreground max-w-md">
-                קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות: אנטומיה, היגיינה
-                וטכניקה נכונה, עד לתוצאה נקייה שאפשר לסמוך עליה.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
-                  <a href="#contact">בואי נדבר</a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="rounded-2xl text-base px-7 bg-card shadow-card">
-                  <a href="#courses">הקורסים שלי</a>
-                </Button>
-              </div>
+          <div className="mx-auto max-w-3xl space-y-6 text-center animate-fade-in-up">
+            <p className="eyebrow">קורס מניקור ולק ג'ל, נפתח להרשמה</p>
+            <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
+              למדי מניקור מהבסיס,
+              <br />
+              <span className="gradient-text">בקצב שלך.</span>
+            </h1>
+            <p className="mx-auto max-w-xl text-base md:text-lg text-muted-foreground">
+              קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות: אנטומיה, היגיינה
+              וטכניקה נכונה, עד לתוצאה נקייה שאפשר לסמוך עליה.
+            </p>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
+                <a href="#contact">בואי נדבר</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-2xl text-base px-7 bg-card shadow-card">
+                <a href="#courses">הקורסים שלי</a>
+              </Button>
             </div>
           </div>
 
           {/* Wide media panel */}
-          <div className="mt-12 md:mt-16 overflow-hidden rounded-[2rem] border border-border shadow-card animate-fade-in-up">
+          <div className="mx-auto mt-12 max-w-4xl md:mt-16 overflow-hidden rounded-[2rem] border border-border shadow-card animate-fade-in-up">
             <img
               src={heroImage}
               alt="תוצאה של מניקור מקצועי, ציפורניים בצורת שקד"
@@ -97,7 +92,7 @@ const Index = () => {
       <section id="why" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-8">
+          <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-8">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               ההבדל בין קורס קבוצתי לקורס אחת על אחת.
@@ -108,7 +103,7 @@ const Index = () => {
           </Reveal>
 
           <Reveal>
-            <div className="flex flex-wrap gap-2">
+            <div className="mx-auto flex max-w-4xl flex-wrap justify-center gap-2">
               {axes.map((axis) => (
                 <span
                   key={axis}
@@ -119,7 +114,7 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="relative mt-6 grid items-stretch gap-4 sm:grid-cols-2 sm:gap-6">
+            <div className="relative mx-auto mt-6 grid max-w-4xl items-stretch gap-4 sm:grid-cols-2 sm:gap-6">
               <div className="rounded-3xl border border-primary/30 gradient-card p-6 shadow-card sm:p-7">
                 <h3 className="flex items-center gap-2 text-lg font-semibold">
                   <Check className="h-5 w-5 shrink-0 text-primary" />
@@ -148,13 +143,13 @@ const Index = () => {
           </Reveal>
 
           <Reveal className="mt-12">
-            <figure className="max-w-3xl">
-              <Quote className="h-8 w-8 text-primary/25" aria-hidden="true" />
+            <figure className="mx-auto max-w-2xl text-center">
+              <Quote className="mx-auto h-8 w-8 text-primary/25" aria-hidden="true" />
               <blockquote className="mt-3 text-xl font-medium leading-relaxed text-foreground/70 md:text-2xl">
                 אני מלמדת רק אחת על אחת כי כדי שהיד שלך תעבוד נכון, מישהי צריכה לעמוד לידך
                 ולתקן בזמן אמת. את זה אי אפשר לעשות לעשר תלמידות במקביל.
               </blockquote>
-              <figcaption className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
+              <figcaption className="mt-4 flex items-center justify-center gap-3 text-sm text-muted-foreground">
                 <span className="h-px w-8 bg-primary/40" />
                 <span className="font-medium text-foreground/80">רבקה</span>
                 <span aria-hidden="true">·</span>
@@ -168,7 +163,7 @@ const Index = () => {
       {/* Courses */}
       <section id="courses" className="scroll-mt-24 py-20 md:py-24">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-12">
             <p className="eyebrow">הקורסים</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
             <p className="text-lg text-muted-foreground">
@@ -177,7 +172,7 @@ const Index = () => {
             </p>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {courses.map((course, index) => (
               <Reveal key={course.id} className="h-full">
                 <CourseCard {...course} />
@@ -190,7 +185,7 @@ const Index = () => {
       {/* What you learn */}
       <section className="py-20 md:py-24">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-12">
             <p className="eyebrow">תוכן הקורס</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה נלמד בקורס המניקור ולק ג'ל.
@@ -200,7 +195,7 @@ const Index = () => {
               בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
             </p>
           </Reveal>
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
             <Reveal>
               <ol className="relative ps-16">
                 {/* Painted before the list items, so the markers sit on top of it. */}
@@ -240,7 +235,7 @@ const Index = () => {
       <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-10">
+          <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-10">
             <p className="eyebrow">שאלות נפוצות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה שנשאלתי הכי הרבה.
@@ -257,7 +252,7 @@ const Index = () => {
       <section className="relative overflow-hidden py-20 md:py-24">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-12">
             <p className="eyebrow">לקוחות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה אומרות הלקוחות שלי.
@@ -283,7 +278,7 @@ const Index = () => {
       <section id="contact" className="relative overflow-hidden scroll-mt-24 py-20 md:py-28">
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-6">
+          <Reveal className="mx-auto max-w-2xl space-y-6 text-center">
             <p className="eyebrow">יצירת קשר</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               רוצה לשמוע עוד?
@@ -291,7 +286,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
             </p>
-            <div>
+            <div className="flex justify-center">
               <Button size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
                 צרי קשר
               </Button>
