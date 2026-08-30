@@ -217,6 +217,31 @@ shadows and a two-stop gradient on the primary surfaces.
     }
   }
 
+  /* The timeline rule grows as the section scrolls past. Same @supports guard as
+     .reveal: without scroll-driven animations the line simply renders full. */
+  .timeline-line {
+    transform-origin: top;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .timeline-line {
+        animation: lineGrow linear both;
+        animation-timeline: view();
+        animation-range: entry 40% cover 55%;
+      }
+    }
+  }
+
+  @keyframes lineGrow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
   /* Wordmark. Rounded display face, tightened slightly at logo size. */
   .wordmark {
     font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;

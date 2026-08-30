@@ -183,22 +183,25 @@ const Index = () => {
               בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
             </p>
           </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {highlights.map((item, index) => (
-              <Reveal key={item.title} className="h-full">
-                <div className="flex h-full flex-col gap-3 rounded-3xl border border-border gradient-card p-6 shadow-card">
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
-                      <item.icon className="h-5 w-5" />
-                    </span>
-                    <span className="eyebrow">{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <ol className="relative max-w-3xl ps-16">
+              {/* Painted before the list items, so the markers sit on top of it. */}
+              <div className="absolute inset-y-2 start-[1.375rem] w-0.5 overflow-hidden rounded-full bg-border">
+                <div className="timeline-line h-full w-full gradient-primary" />
+              </div>
+
+              {highlights.map((item, index) => (
+                <li key={item.title} className="relative pb-10 last:pb-0">
+                  <span className="absolute -start-16 top-0 flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
+                    <item.icon className="h-5 w-5" />
+                  </span>
+                  <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+                  <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-1 text-muted-foreground">{item.desc}</p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
         </div>
       </section>
 
