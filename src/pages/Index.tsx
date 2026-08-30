@@ -4,6 +4,7 @@ import { Heart, Clock, UserCheck, ShieldCheck, Layers, Brush, BookOpen } from "l
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Reveal } from "@/components/Reveal";
+import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
@@ -43,8 +44,9 @@ const Index = () => {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="gradient-hero border-b border-border">
-        <div className="container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
+      <section className="relative overflow-hidden gradient-hero border-b border-border">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
             <div className="space-y-5 animate-fade-in-up">
               <p className="eyebrow">קורס מניקור בסיסי, נפתח להרשמה</p>
@@ -86,8 +88,9 @@ const Index = () => {
       </section>
 
       {/* Why private */}
-      <section id="why" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
+      <section id="why" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24 border-b border-border">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -204,8 +207,9 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="scroll-mt-24 gradient-hero py-20 md:py-28">
-        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
+      <section id="contact" className="relative overflow-hidden scroll-mt-24 gradient-hero py-20 md:py-28">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
           <Reveal className="max-w-2xl space-y-6">
             <p className="eyebrow">יצירת קשר</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">

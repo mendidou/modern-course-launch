@@ -1,4 +1,4 @@
-import { whatsappLink } from "@/data/contact";
+import { WHATSAPP_NUMBER, whatsappLink } from "@/data/contact";
 
 /** WhatsApp glyph. lucide has no brand icons, so the path is inlined. */
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -11,6 +11,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
  * Sticky WhatsApp button. Bottom left, which is the trailing corner in RTL.
  */
 export const WhatsAppButton = () => {
+  if (!WHATSAPP_NUMBER) return null;
+
   return (
     <a
       href={whatsappLink()}
