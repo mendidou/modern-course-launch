@@ -121,27 +121,39 @@ const Index = () => {
           </Reveal>
 
           <Reveal>
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+            {/* Column headers only make sense once the two sides sit side by side. */}
+            <div className="mb-4 hidden gap-6 sm:grid sm:grid-cols-2">
               <h3 className="flex items-center gap-2 text-lg font-semibold">
                 <Check className="h-5 w-5 text-primary" />
                 אצלי, אחת על אחת
               </h3>
-              <h3 className="hidden items-center gap-2 text-lg font-semibold text-muted-foreground sm:flex">
+              <h3 className="flex items-center gap-2 text-lg font-semibold text-muted-foreground">
                 <Minus className="h-5 w-5" />
                 בקורס קבוצתי
               </h3>
+            </div>
 
+            <div className="space-y-4">
               {comparison.map((row) => (
-                <Fragment key={row.label}>
-                  <div className="rounded-3xl border border-primary/30 gradient-card p-5 shadow-card">
-                    <p className="eyebrow mb-1.5">{row.label}</p>
-                    <p className="font-medium">{row.private}</p>
+                <div
+                  key={row.label}
+                  className="grid overflow-hidden rounded-3xl border border-border shadow-card sm:grid-cols-2"
+                >
+                  <div className="gradient-card border-b border-border p-5 sm:border-b-0 sm:border-e">
+                    <p className="eyebrow mb-2">{row.label}</p>
+                    <p className="flex items-start gap-2 font-medium">
+                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                      {row.private}
+                    </p>
                   </div>
-                  <div className="rounded-3xl border border-border bg-card/50 p-5">
-                    <p className="eyebrow mb-1.5 sm:hidden">בקורס קבוצתי</p>
-                    <p className="text-muted-foreground">{row.group}</p>
+                  <div className="bg-card/40 p-5">
+                    <p className="eyebrow mb-2 sm:invisible">בקורס קבוצתי</p>
+                    <p className="flex items-start gap-2 text-muted-foreground">
+                      <Minus className="mt-0.5 h-5 w-5 shrink-0" />
+                      {row.group}
+                    </p>
                   </div>
-                </Fragment>
+                </div>
               ))}
             </div>
           </Reveal>
