@@ -212,11 +212,11 @@ subtle two-stop gradient on the primary surfaces.
     }
   }
 
-  /* Wordmark. Script face, so it needs a size bump to match the surrounding UI. */
+  /* Wordmark. Rounded display face, tightened slightly at logo size. */
   .wordmark {
-    font-family: "Dancing Script", ui-rounded, cursive;
+    font-family: "Baloo 2", ui-rounded, system-ui, sans-serif;
     font-weight: 700;
-    letter-spacing: 0.01em;
+    letter-spacing: -0.01em;
   }
 
   /* Small caps label above a section title. */

@@ -17,7 +17,7 @@ export const SiteHeader = () => {
     <header className="sticky top-0 z-50 pt-3 pb-2 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto max-w-6xl px-4" dir="rtl">
         <nav className="mx-auto flex max-w-3xl items-center justify-between gap-4 rounded-full border border-border bg-card px-4 py-2 shadow-card">
-          <Link to="/" className="wordmark text-2xl leading-none text-primary">
+          <Link to="/" className="wordmark text-xl leading-none text-primary">
             rbknails
           </Link>
 
