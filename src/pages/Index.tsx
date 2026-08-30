@@ -3,6 +3,7 @@ import { CourseCard } from "@/components/CourseCard";
 import { Heart, Clock, UserCheck, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
+import { Reveal } from "@/components/Reveal";
 import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
@@ -75,6 +76,9 @@ const Index = () => {
             <img
               src={heroImage}
               alt="תוצאה של מניקור מקצועי, ציפורניים בצורת שקד"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-[18rem] md:h-[26rem] rounded-[1.5rem] object-cover object-[50%_25%]"
             />
           </div>
@@ -84,7 +88,7 @@ const Index = () => {
       {/* Why private */}
       <section id="why" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               שלוש סיבות שבגללן אני מלמדת אחת על אחת.
@@ -92,16 +96,18 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב.
             </p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {benefits.map((item) => (
-              <div key={item.title} className="rounded-3xl border border-border gradient-card p-7 space-y-3 shadow-card">
+              <Reveal key={item.title} className="h-full">
+                <div className="h-full rounded-3xl border border-border gradient-card p-7 space-y-3 shadow-card">
                 <span className="inline-flex items-center justify-center w-11 h-11 rounded-2xl gradient-primary text-primary-foreground shadow-glow">
                   <item.icon className="w-5 h-5" />
                 </span>
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
-              </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -110,7 +116,7 @@ const Index = () => {
       {/* What you learn */}
       <section className="py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">תוכן הקורס</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה נלמד בקורס המניקור הבסיסי.
@@ -119,14 +125,16 @@ const Index = () => {
               הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
               בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
             </p>
-          </div>
+          </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((item, index) => (
-              <div key={item.title} className="space-y-3 rounded-3xl border border-border bg-card p-6 shadow-card">
-                <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </div>
+              <Reveal key={item.title} className="h-full">
+                <div className="h-full space-y-3 rounded-3xl border border-border bg-card p-6 shadow-card">
+                  <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -135,18 +143,20 @@ const Index = () => {
       {/* Courses */}
       <section id="courses" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">הקורסים</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
             <p className="text-lg text-muted-foreground">
               כרגע נפתח להרשמה קורס המניקור הבסיסי. שאר הקורסים בדרך, ואפשר להשאיר פרטים
               ולהיות הראשונות לדעת.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {courses.map((course) => (
-              <CourseCard key={course.id} {...course} />
+            {courses.map((course, index) => (
+              <Reveal key={course.id} className="h-full">
+                <CourseCard {...course} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -155,7 +165,7 @@ const Index = () => {
       {/* Testimonials */}
       <section className="py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-4 mb-12">
+          <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">לקוחות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה אומרות הלקוחות שלי.
@@ -172,7 +182,7 @@ const Index = () => {
                 @rbknails
               </a>
             </p>
-          </div>
+          </Reveal>
           <Testimonials />
         </div>
       </section>
@@ -180,7 +190,7 @@ const Index = () => {
       {/* FAQ */}
       <section id="faq" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-4 mb-10">
+          <Reveal className="max-w-2xl space-y-4 mb-10">
             <p className="eyebrow">שאלות נפוצות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               מה שנשאלתי הכי הרבה.
@@ -188,7 +198,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               ואם נשאר משהו פתוח, כתבי לי ואענה.
             </p>
-          </div>
+          </Reveal>
           <Faq />
         </div>
       </section>
@@ -196,7 +206,7 @@ const Index = () => {
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 gradient-hero py-20 md:py-28">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="max-w-2xl space-y-6">
+          <Reveal className="max-w-2xl space-y-6">
             <p className="eyebrow">יצירת קשר</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               רוצה לשמוע עוד?
@@ -209,7 +219,7 @@ const Index = () => {
                 צרי קשר
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

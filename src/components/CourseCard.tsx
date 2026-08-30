@@ -28,7 +28,7 @@ export const CourseCard = ({
 }: CourseCardProps) => {
   return (
     <article
-      className="group flex flex-col overflow-hidden rounded-3xl border border-border gradient-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift animate-fade-in-up"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border gradient-card shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
       dir="rtl"
     >
       <div className="relative h-52 md:h-64 overflow-hidden border-b border-border">
@@ -36,6 +36,8 @@ export const CourseCard = ({
           src={image}
           alt={title}
           style={{ objectPosition }}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         <Badge

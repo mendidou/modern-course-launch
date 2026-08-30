@@ -98,6 +98,9 @@ const CourseDetail = () => {
               <img
                 src={detail.image}
                 alt={course.title}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full rounded-[1.5rem] object-cover"
               />
             </div>
