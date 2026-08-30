@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
-import { Check, Minus, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
+import { Check, Minus, Quote, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Reveal } from "@/components/Reveal";
@@ -119,6 +119,20 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב. ככה זה נראה בפועל.
             </p>
+          </Reveal>
+
+          <Reveal className="mb-10">
+            <figure className="relative max-w-3xl overflow-hidden rounded-3xl border border-primary/30 gradient-card p-7 shadow-card md:p-9">
+              <Quote className="absolute end-6 top-6 h-10 w-10 text-primary/15" aria-hidden="true" />
+              <blockquote className="relative text-xl font-medium leading-relaxed md:text-2xl">
+                אני מלמדת רק אחת על אחת כי כדי שהיד שלך תעבוד נכון, מישהי צריכה לעמוד לידך
+                ולתקן בזמן אמת. את זה אי אפשר לעשות לעשר תלמידות במקביל.
+              </blockquote>
+              <figcaption className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
+                <span className="h-px w-8 bg-primary/40" />
+                <span className="wordmark text-lg text-primary">rbknails</span>
+              </figcaption>
+            </figure>
           </Reveal>
 
           <Reveal>
