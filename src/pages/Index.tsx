@@ -236,6 +236,23 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
+        <BackgroundIcons />
+        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
+          <Reveal className="max-w-2xl space-y-4 mb-10">
+            <p className="eyebrow">שאלות נפוצות</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              מה שנשאלתי הכי הרבה.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              ואם נשאר משהו פתוח, כתבי לי ואענה.
+            </p>
+          </Reveal>
+          <Faq />
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="relative overflow-hidden py-20 md:py-24">
         <BackgroundIcons />
@@ -259,23 +276,6 @@ const Index = () => {
             </p>
           </Reveal>
           <Testimonials />
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section id="faq" className="relative overflow-hidden scroll-mt-24 py-20 md:py-24">
-        <BackgroundIcons />
-        <div className="relative container mx-auto max-w-6xl px-4" dir="rtl">
-          <Reveal className="max-w-2xl space-y-4 mb-10">
-            <p className="eyebrow">שאלות נפוצות</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              מה שנשאלתי הכי הרבה.
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              ואם נשאר משהו פתוח, כתבי לי ואענה.
-            </p>
-          </Reveal>
-          <Faq />
         </div>
       </section>
 
