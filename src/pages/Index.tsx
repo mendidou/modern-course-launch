@@ -81,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* Why private */}
-      <section id="why" className="py-20 md:py-24 border-b border-border">
+      <section id="why" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">למה פרטי</p>
@@ -130,7 +130,7 @@ const Index = () => {
       </section>
 
       {/* Courses */}
-      <section id="courses" className="py-20 md:py-24 border-b border-border">
+      <section id="courses" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
         <div className="container mx-auto px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">הקורסים</p>
@@ -175,7 +175,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="py-20 md:py-28">
+      <section id="contact" className="scroll-mt-24 py-20 md:py-28">
         <div className="container mx-auto px-4" dir="rtl">
           <div className="max-w-2xl space-y-6">
             <p className="eyebrow">יצירת קשר</p>
