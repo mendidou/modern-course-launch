@@ -43,7 +43,7 @@ const Index = () => {
 
       {/* Hero */}
       <section className="gradient-hero border-b border-border">
-        <div className="container mx-auto px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
             <div className="space-y-5 animate-fade-in-up">
               <p className="eyebrow">קורס מניקור בסיסי, נפתח להרשמה</p>
@@ -83,7 +83,7 @@ const Index = () => {
 
       {/* Why private */}
       <section id="why" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">למה פרטי</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -109,7 +109,7 @@ const Index = () => {
 
       {/* What you learn */}
       <section className="py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">תוכן הקורס</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -134,7 +134,7 @@ const Index = () => {
 
       {/* Courses */}
       <section id="courses" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">הקורסים</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
@@ -154,7 +154,7 @@ const Index = () => {
 
       {/* Testimonials */}
       <section className="py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">לקוחות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -179,7 +179,7 @@ const Index = () => {
 
       {/* FAQ */}
       <section id="faq" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-4 mb-10">
             <p className="eyebrow">שאלות נפוצות</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -195,7 +195,7 @@ const Index = () => {
 
       {/* CTA */}
       <section id="contact" className="scroll-mt-24 gradient-hero py-20 md:py-28">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="max-w-2xl space-y-6">
             <p className="eyebrow">יצירת קשר</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
@@ -214,7 +214,7 @@ const Index = () => {
       </section>
 
       <footer className="border-t border-border py-10">
-        <div className="container mx-auto px-4" dir="rtl">
+        <div className="container mx-auto max-w-6xl px-4" dir="rtl">
           <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm text-muted-foreground">
             <p>© 2024 כל הזכויות שמורות</p>
             <a

@@ -35,7 +35,7 @@ const CourseDetail = () => {
     return (
       <div className="min-h-screen" dir="rtl">
         <SiteHeader />
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto max-w-6xl px-4 py-12">
           {backLink}
           <div className="max-w-xl space-y-5 py-8 animate-fade-in-up">
             <p className="eyebrow">בקרוב</p>
@@ -67,7 +67,7 @@ const CourseDetail = () => {
 
       {/* Hero */}
       <section className="gradient-hero border-b border-border">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto max-w-6xl px-4 py-12">
           {backLink}
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -107,7 +107,7 @@ const CourseDetail = () => {
 
       {/* Content */}
       <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-6xl px-4">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
             <div className="lg:col-span-2 space-y-12">
               <div className="space-y-4">
