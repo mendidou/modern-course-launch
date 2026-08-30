@@ -36,9 +36,7 @@ export const CourseCard = ({
           src={image}
           alt={title}
           style={{ objectPosition }}
-          className={`w-full h-full object-cover transition-transform duration-500 ${
-            comingSoon ? "grayscale opacity-70" : "group-hover:scale-[1.04]"
-          }`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         <Badge
           variant={comingSoon ? "secondary" : "default"}
@@ -49,7 +47,9 @@ export const CourseCard = ({
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <h3 className="text-lg font-semibold">{title}</h3>
+        <h3 className={`text-lg font-semibold ${comingSoon ? "text-muted-foreground" : ""}`}>
+          {title}
+        </h3>
         <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
 
         <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
