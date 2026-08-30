@@ -80,14 +80,14 @@ const Index = () => {
           </div>
 
           {/* Wide media panel */}
-          <div className="mt-12 md:mt-16 rounded-[2rem] border border-border bg-card p-3 shadow-card animate-fade-in-up">
+          <div className="mt-12 md:mt-16 overflow-hidden rounded-[2rem] border border-border shadow-card animate-fade-in-up">
             <img
               src={heroImage}
               alt="תוצאה של מניקור מקצועי, ציפורניים בצורת שקד"
               loading="eager"
               fetchPriority="high"
               decoding="async"
-              className="w-full h-[18rem] md:h-[26rem] rounded-[1.5rem] object-cover object-[50%_25%]"
+              className="block w-full h-[18rem] md:h-[26rem] object-cover object-[50%_25%]"
             />
           </div>
         </div>
@@ -222,13 +222,13 @@ const Index = () => {
             </Reveal>
 
             <Reveal>
-              <div className="overflow-hidden rounded-[2rem] border border-border bg-card p-3 shadow-card">
+              <div className="overflow-hidden rounded-[2rem] border border-border shadow-card">
                 <img
                   src={syllabusImage}
                   alt="עבודה על ציפורניים במהלך מפגש"
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/3] w-full rounded-[1.5rem] object-cover object-[50%_68%]"
+                  className="block aspect-[4/3] w-full object-cover object-[50%_68%]"
                 />
               </div>
             </Reveal>

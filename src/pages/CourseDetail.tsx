@@ -96,14 +96,14 @@ const CourseDetail = () => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-border bg-card p-3 shadow-card">
+            <div className="overflow-hidden rounded-[2rem] border border-border shadow-card">
               <img
                 src={detail.image}
                 alt={course.title}
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="w-full rounded-[1.5rem] object-cover"
+                className="block w-full object-cover"
               />
             </div>
           </div>
