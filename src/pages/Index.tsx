@@ -9,6 +9,7 @@ import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
+import syllabusImage from "@/assets/course-gel-polish.jpg";
 
 /** One row per point, read down each column. Kept to one short line a side:
     the contrast lands faster than a paragraph does. */
@@ -210,25 +211,39 @@ const Index = () => {
               בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
             </p>
           </Reveal>
-          <Reveal>
-            <ol className="relative max-w-3xl ps-16">
-              {/* Painted before the list items, so the markers sit on top of it. */}
-              <div className="absolute inset-y-2 start-[1.375rem] w-0.5 overflow-hidden rounded-full bg-border">
-                <div className="timeline-line h-full w-full gradient-primary" />
-              </div>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
+            <Reveal>
+              <ol className="relative ps-16">
+                {/* Painted before the list items, so the markers sit on top of it. */}
+                <div className="absolute inset-y-2 start-[1.375rem] w-0.5 overflow-hidden rounded-full bg-border">
+                  <div className="timeline-line h-full w-full gradient-primary" />
+                </div>
 
-              {highlights.map((item, index) => (
-                <li key={item.title} className="relative pb-10 last:pb-0">
-                  <span className="absolute -start-16 top-0 flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
-                    <item.icon className="h-5 w-5" />
-                  </span>
-                  <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
-                  <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-1 text-muted-foreground">{item.desc}</p>
-                </li>
-              ))}
-            </ol>
-          </Reveal>
+                {highlights.map((item, index) => (
+                  <li key={item.title} className="relative pb-9 last:pb-0">
+                    <span className="absolute -start-16 top-0 flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+                    <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
+                    <p className="mt-1 text-muted-foreground">{item.desc}</p>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal>
+              <div className="overflow-hidden rounded-[2rem] border border-border bg-card p-3 shadow-card">
+                <img
+                  src={syllabusImage}
+                  alt="עבודה על ציפורניים במהלך מפגש"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full rounded-[1.5rem] object-cover object-[50%_68%]"
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
