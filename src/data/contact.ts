@@ -6,7 +6,7 @@
 export const WHATSAPP_NUMBER = "972545817707";
 
 export const WHATSAPP_MESSAGE =
-  "היי! הגעתי מהאתר ואשמח לשמוע פרטים על קורס המניקור הבסיסי";
+  "היי! הגעתי מהאתר ואשמח לשמוע פרטים על קורס המניקור ולק ג'ל";
 
 export const whatsappLink = () =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;

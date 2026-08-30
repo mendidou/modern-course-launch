@@ -43,12 +43,12 @@ const CourseDetail = () => {
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">{course.title}</h1>
             <p className="text-lg text-muted-foreground">{course.description}</p>
             <p className="text-muted-foreground">
-              הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס המניקור הבסיסי, או להשאיר פרטים
+              הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס המניקור ולק ג'ל, או להשאיר פרטים
               ולהיות מהראשונות שיֵדעו כשנפתחת הרשמה.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
-                <Link to="/course/1">לקורס מניקור בסיסי</Link>
+                <Link to="/course/1">לקורס מניקור ולק ג'ל</Link>
               </Button>
               <Button size="lg" variant="outline" className="rounded-2xl px-7 bg-card shadow-card">
                 עדכנו אותי כשנפתח

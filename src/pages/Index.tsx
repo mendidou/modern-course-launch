@@ -49,7 +49,7 @@ const Index = () => {
         <div className="relative container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-16 items-end">
             <div className="space-y-5 animate-fade-in-up">
-              <p className="eyebrow">קורס מניקור בסיסי, נפתח להרשמה</p>
+              <p className="eyebrow">קורס מניקור ולק ג'ל, נפתח להרשמה</p>
               <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
                 למדי מניקור מהבסיס,
                 <br />
@@ -123,12 +123,12 @@ const Index = () => {
             <p className="eyebrow">הקורסים</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
             <p className="text-lg text-muted-foreground">
-              כרגע נפתח להרשמה קורס המניקור הבסיסי. שאר הקורסים בדרך, ואפשר להשאיר פרטים
+              כרגע נפתח להרשמה קורס המניקור ולק ג'ל. שאר הקורסים בדרך, ואפשר להשאיר פרטים
               ולהיות הראשונות לדעת.
             </p>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {courses.map((course, index) => (
               <Reveal key={course.id} className="h-full">
                 <CourseCard {...course} />
@@ -144,7 +144,7 @@ const Index = () => {
           <Reveal className="max-w-2xl space-y-4 mb-12">
             <p className="eyebrow">תוכן הקורס</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              מה נלמד בקורס המניקור הבסיסי.
+              מה נלמד בקורס המניקור ולק ג'ל.
             </h2>
             <p className="text-lg text-muted-foreground">
               הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
