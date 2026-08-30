@@ -4,11 +4,15 @@ import { Button } from "@/components/ui/button";
 const links = [
   { href: "#why", label: "למה פרטי" },
   { href: "#courses", label: "הקורסים" },
+  { href: "#faq", label: "שאלות נפוצות" },
   { href: "#contact", label: "יצירת קשר" },
 ];
 
 /** Floating pill navigation, sticky at the top of the page. */
 export const SiteHeader = () => {
+  /* Absolute so the anchors also work from a course page, where the sections do not exist. */
+  const home = import.meta.env.BASE_URL;
+
   return (
     <header className="sticky top-0 z-50 pt-3 pb-2 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4" dir="rtl">
@@ -19,14 +23,14 @@ export const SiteHeader = () => {
 
           <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
             {links.map((link) => (
-              <a key={link.href} href={link.href} className="hover:text-foreground transition-colors">
+              <a key={link.href} href={`${home}${link.href}`} className="hover:text-foreground transition-colors">
                 {link.label}
               </a>
             ))}
           </div>
 
           <Button asChild size="sm" className="rounded-full px-4">
-            <a href="#contact">בואי נדבר</a>
+            <a href={`${home}#contact`}>בואי נדבר</a>
           </Button>
         </nav>
       </div>

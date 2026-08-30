@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
 import { Heart, Clock, UserCheck, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
+import { Faq } from "@/components/Faq";
 import { SiteHeader } from "@/components/SiteHeader";
 import { courses } from "@/data/courses";
 import heroImage from "@/assets/hero-nails.jpg";
@@ -171,6 +172,22 @@ const Index = () => {
             </p>
           </div>
           <Testimonials />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="scroll-mt-24 py-20 md:py-24 border-b border-border">
+        <div className="container mx-auto px-4" dir="rtl">
+          <div className="max-w-2xl space-y-4 mb-10">
+            <p className="eyebrow">שאלות נפוצות</p>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              מה שנשאלתי הכי הרבה.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              ואם נשאר משהו פתוח, כתבי לי ואענה.
+            </p>
+          </div>
+          <Faq />
         </div>
       </section>
 
