@@ -4,6 +4,7 @@ import { CourseCard } from "@/components/CourseCard";
 import { Check, Minus, Quote, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
+import { About } from "@/components/About";
 import { Reveal } from "@/components/Reveal";
 import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -274,6 +275,8 @@ const Index = () => {
           <Testimonials />
         </div>
       </section>
+
+      <About />
 
       {/* CTA */}
       <section id="contact" className="relative overflow-hidden scroll-mt-24 py-20 md:py-28">

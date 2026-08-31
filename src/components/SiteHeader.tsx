@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { whatsappLink } from "@/data/contact";
 
 const links = [
+  { href: "services", label: "שירותים", route: true },
   { href: "#courses", label: "הקורסים" },
   { href: "#why", label: "למה פרטי" },
   { href: "#faq", label: "שאלות נפוצות" },
@@ -27,15 +28,25 @@ export const SiteHeader = () => {
           </Link>
 
           <div className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={`${home}${link.href}`}
-                className="hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) =>
+              link.route ? (
+                <Link
+                  key={link.href}
+                  to={`/${link.href}`}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={`${home}${link.href}`}
+                  className="hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              ),
+            )}
           </div>
 
           <div className="flex items-center gap-1">
@@ -59,16 +70,27 @@ export const SiteHeader = () => {
               <SheetContent side="right" className="w-64" dir="rtl">
                 <SheetTitle className="wordmark text-xl text-primary">rbknails</SheetTitle>
                 <nav className="mt-8 flex flex-col gap-1">
-                  {links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={`${home}${link.href}`}
-                      onClick={() => setOpen(false)}
-                      className="rounded-2xl px-3 py-3 text-lg font-medium transition-colors hover:bg-secondary"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
+                  {links.map((link) =>
+                    link.route ? (
+                      <Link
+                        key={link.href}
+                        to={`/${link.href}`}
+                        onClick={() => setOpen(false)}
+                        className="rounded-2xl px-3 py-3 text-lg font-medium transition-colors hover:bg-secondary"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.href}
+                        href={`${home}${link.href}`}
+                        onClick={() => setOpen(false)}
+                        className="rounded-2xl px-3 py-3 text-lg font-medium transition-colors hover:bg-secondary"
+                      >
+                        {link.label}
+                      </a>
+                    ),
+                  )}
                 </nav>
               </SheetContent>
             </Sheet>
