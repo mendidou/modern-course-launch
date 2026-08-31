@@ -1,7 +1,8 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CourseCard } from "@/components/CourseCard";
-import { Check, Minus, Quote, ShieldCheck, Layers, Brush, BookOpen } from "lucide-react";
+import { Check, Minus, Quote, ShieldCheck, Layers, Brush, Hand } from "lucide-react";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { About } from "@/components/About";
@@ -18,7 +19,7 @@ const axes = ["תשומת לב", "קצב", "תרגול", "ליווי"];
 
 const sides = {
   private:
-    "המפגש כולו שלך. מתקדמות בקצב שלך, את עובדת בידיים ואני מתקנת תוך כדי, ואני זמינה לשאלות גם בין המפגשים.",
+    "המפגש כולו שלך, בלי להתחלק בקשב. מתקדמות בקצב שלך, את מתרגלת על מודליסטית ואני מתקנת תוך כדי, ואני זמינה לשאלות גם בין המפגשים.",
   group:
     "המורה מתחלקת בין כמה תלמידות, הקצב נקבע לפי הקבוצה, מתרגלים בתור, ומה שלא נשאל בכיתה נשאר פתוח.",
 };
@@ -26,23 +27,19 @@ const sides = {
 const highlights = [
   {
     icon: Layers,
-    title: "להבין על מה עובדים",
-    desc: "המבנה האנטומי של הציפורן, הבסיס לכל טיפול נקי ובטוח",
+    title: "אנטומיה של הציפורן",
   },
   {
     icon: ShieldCheck,
-    title: "לעבוד בטוח",
-    desc: "היגיינה, חיטוי ועיקור כלים, וזיהוי מצבים שבהם אסור לטפל",
+    title: "היגיינה",
   },
   {
     icon: Brush,
-    title: "טכניקה ותוצאה",
-    desc: "מניקור משולב, שיוף וצורות, מבנה אנטומי ומריחת צבע אחידה",
+    title: "טכניקה",
   },
   {
-    icon: BookOpen,
-    title: "חוברת עבודה",
-    desc: "חוברת מלאה ללומדת שנשארת איתך גם אחרי סוף הקורס",
+    icon: Hand,
+    title: "תירגול",
   },
 ];
 
@@ -56,15 +53,15 @@ const Index = () => {
         <BackgroundIcons />
         <div className="relative container mx-auto max-w-6xl px-4 pt-16 pb-14 md:pt-24 md:pb-20" dir="rtl">
           <div className="mx-auto max-w-3xl space-y-6 text-center animate-fade-in-up">
-            <p className="eyebrow">קורס מניקור ולק ג'ל, נפתח להרשמה</p>
+            <p className="eyebrow">קורס מניקור ג'ל מתחילות, ההרשמה פתוחה</p>
             <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl xl:text-6xl font-semibold tracking-tight leading-[1.15]">
-              למדי מניקור מהבסיס,
+              מהבסיס ועד תוצאה מקצועית,
               <br />
               <span className="gradient-text">בקצב שלך.</span>
             </h1>
             <p className="mx-auto max-w-xl text-base md:text-lg text-muted-foreground">
-              קורס פרטי אחד על אחד, עם ליווי אישי וצמוד. מתחילות מהיסודות: אנטומיה, היגיינה
-              וטכניקה נכונה, עד לתוצאה נקייה שאפשר לסמוך עליה.
+              קורס פרטי אחד על אחד, בליווי צמוד לאורך כל הדרך. מתחילות מהיסודות: אנטומיה,
+              היגיינה וטכניקה נכונה, עד שאת עובדת נקי, בטוח ובביטחון מלא.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
@@ -100,7 +97,7 @@ const Index = () => {
               ההבדל בין קורס קבוצתי לקורס אחת על אחת.
             </h2>
             <p className="text-lg text-muted-foreground">
-              אני בוחרת ללמד בצורה אישית כי זה מה שעובד הכי טוב. ככה זה נראה בפועל.
+              אני מלמדת אחת על אחת בלבד, כי זו הדרך שעובדת הכי טוב. ככה זה נראה בפועל.
             </p>
           </Reveal>
 
@@ -169,8 +166,8 @@ const Index = () => {
             <p className="eyebrow">הקורסים</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">הקורסים שלי.</h2>
             <p className="text-lg text-muted-foreground">
-              כרגע נפתח להרשמה קורס המניקור ולק ג'ל. שאר הקורסים בדרך, ואפשר להשאיר פרטים
-              ולהיות הראשונות לדעת.
+              כרגע פתוח להרשמה קורס מניקור ג'ל מתחילות. השאירי פרטים ותהיי הראשונה לדעת
+              כשנפתחת ההרשמה.
             </p>
           </Reveal>
 
@@ -190,32 +187,29 @@ const Index = () => {
           <Reveal className="mx-auto max-w-2xl space-y-4 text-center mb-12">
             <p className="eyebrow">תוכן הקורס</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              מה נלמד בקורס המניקור ולק ג'ל.
+              על הקורס מניקור ג'ל למתחילות.
             </h2>
             <p className="text-lg text-muted-foreground">
-              הקורס בנוי שלב אחרי שלב, מהיסודות ועד לתוצאה נקייה ואחידה. כל נושא נלמד יחד
-              בתיאוריה ובתרגול מעשי. את התוכן המלא נעבור במפגשים.
+              שלב אחרי שלב, מהיסודות ועד תוצאה נקייה ואחידה. כל נושא קודם מבינות אותו, ואז
+              מתרגלות אותו. את התוכן המלא עוברות יחד במפגשים.
             </p>
           </Reveal>
           <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
             <Reveal>
-              <ol className="relative ps-16">
-                {/* Painted before the list items, so the markers sit on top of it. */}
-                <div className="absolute inset-y-2 start-[1.375rem] w-0.5 overflow-hidden rounded-full bg-border">
-                  <div className="timeline-line h-full w-full gradient-primary" />
-                </div>
-
+              <ul className="grid gap-4 sm:grid-cols-2">
                 {highlights.map((item, index) => (
-                  <li key={item.title} className="relative pb-9 last:pb-0">
-                    <span className="absolute -start-16 top-0 flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
+                  <li
+                    key={item.title}
+                    className="rounded-3xl border border-border bg-card/70 p-5 shadow-card"
+                  >
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl gradient-primary text-primary-foreground shadow-glow">
                       <item.icon className="h-5 w-5" />
                     </span>
-                    <p className="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+                    <p className="eyebrow mt-4">{String(index + 1).padStart(2, "0")}</p>
                     <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-1 text-muted-foreground">{item.desc}</p>
                   </li>
                 ))}
-              </ol>
+              </ul>
             </Reveal>
 
             <Reveal>
@@ -230,6 +224,15 @@ const Index = () => {
               </div>
             </Reveal>
           </div>
+
+          <Reveal className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">
+              <a href={whatsappLink()} target="_blank" rel="noreferrer">בואי נדבר</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-2xl text-base px-7 bg-card shadow-card">
+              <Link to="/course/1">למידע נוסף</Link>
+            </Button>
+          </Reveal>
         </div>
       </section>
 
@@ -260,7 +263,7 @@ const Index = () => {
               מה אומרות הלקוחות שלי.
             </h2>
             <p className="text-lg text-muted-foreground">
-              תגובות אמיתיות שנכתבו על העבודות שלי באינסטגרם{" "}
+              כל התגובות אמיתיות, ישר מהעבודות שלי באינסטגרם{" "}
               <a
                 href="https://www.instagram.com/rbknails/"
                 target="_blank"
@@ -288,7 +291,7 @@ const Index = () => {
               רוצה לשמוע עוד?
             </h2>
             <p className="text-lg text-muted-foreground">
-              בואי נדבר ונראה אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
+              בואי נדבר ונבדוק יחד אם הקורס מתאים לך. בלי התחייבות, רק שיחה.
             </p>
             <div className="flex justify-center">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl text-base px-7">

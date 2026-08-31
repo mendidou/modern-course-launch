@@ -7,6 +7,9 @@ import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { getCourse } from "@/data/courses";
 import { whatsappLink } from "@/data/contact";
 
+/** The one line in the sidebar that carries real weight, so it is set apart. */
+const KIT_ITEM = "ערכה מקצועית שאיתה אפשר להתחיל לעבוד";
+
 const CourseDetail = () => {
   const { id } = useParams();
   const course = getCourse(id);
@@ -44,12 +47,12 @@ const CourseDetail = () => {
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">{course.title}</h1>
             <p className="text-lg text-muted-foreground">{course.description}</p>
             <p className="text-muted-foreground">
-              הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס המניקור ולק ג'ל, או להשאיר פרטים
+              הקורס הזה עוד בהכנה. בינתיים אפשר להתחיל מקורס מניקור ג'ל מתחילות, או להשאיר פרטים
               ולהיות מהראשונות שיֵדעו כשנפתחת הרשמה.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
-                <Link to="/course/1">לקורס מניקור ולק ג'ל</Link>
+                <Link to="/course/1">לקורס מניקור ג'ל מתחילות</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-2xl px-7 bg-card shadow-card">
                 <a href={whatsappLink()} target="_blank" rel="noreferrer">
@@ -122,31 +125,29 @@ const CourseDetail = () => {
             <div className="lg:col-span-2 space-y-12">
               <div className="space-y-4">
                 <p className="eyebrow">אודות הקורס</p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  {detail.longDescription}
-                </p>
+                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                  {detail.longDescription.split("\n\n").map((para) => (
+                    <p key={para}>{para}</p>
+                  ))}
+                </div>
               </div>
 
               <div className="space-y-6">
-                <div className="space-y-3">
-                  <p className="eyebrow">מה נלמד</p>
-                  <p className="text-muted-foreground">
-                    ראשי הפרקים שנעבור יחד. את התוכן המלא לומדים במפגשים.
-                  </p>
-                </div>
-                <ol className="border-t border-border">
-                  {detail.modules.map((module, index) => (
-                    <li
-                      key={module}
-                      className="flex items-baseline gap-4 py-4"
-                    >
-                      <span className="eyebrow shrink-0">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-medium">{module}</span>
-                    </li>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+                  מה נלמד בקורס.
+                </h2>
+                <div className="space-y-8 border-t border-border pt-6">
+                  {detail.syllabus.map((part) => (
+                    <div key={part.title} className="space-y-3">
+                      <h3 className="text-lg font-semibold">{part.title}</h3>
+                      {part.paragraphs.map((para) => (
+                        <p key={para} className="text-muted-foreground leading-relaxed">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                   ))}
-                </ol>
+                </div>
               </div>
             </div>
 
@@ -158,7 +159,9 @@ const CourseDetail = () => {
                   {detail.whatYouGet.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-muted-foreground">
                       <Check className="w-4 h-4 mt-1 text-primary shrink-0" />
-                      <span>{item}</span>
+                      <span className={item === KIT_ITEM ? "font-semibold text-foreground" : undefined}>
+                        {item}
+                      </span>
                     </li>
                   ))}
                 </ul>

@@ -27,11 +27,8 @@ const Services = () => {
           <div className="mx-auto max-w-2xl space-y-4 text-center animate-fade-in-up">
             <p className="eyebrow">שירותים</p>
             <h1 className="text-3xl md:text-5xl font-semibold tracking-tight">
-              הטיפולים שאני עושה.
+              תפריט הטיפולים.
             </h1>
-            <p className="text-lg text-muted-foreground">
-              ידיים, רגליים, בנייה, קישוטים וגבות. את המחירון אשלח לך בוואטסאפ, יחד עם תור פנוי.
-            </p>
             <div className="flex justify-center pt-2">
               <Button asChild size="lg" className="gradient-primary shadow-glow rounded-2xl px-7">
                 <a href={whatsappLink()} target="_blank" rel="noreferrer">
@@ -56,7 +53,6 @@ const Services = () => {
 
                   <div>
                     <h2 className="text-xl font-semibold">{group.title}</h2>
-                    <p className="mt-1 text-muted-foreground">{group.intro}</p>
                   </div>
 
                   <ul className="flex flex-wrap gap-2">
@@ -69,10 +65,6 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-
-                  {group.note && (
-                    <p className="mt-auto pt-2 text-sm text-muted-foreground">{group.note}</p>
-                  )}
                 </div>
               </Reveal>
             ))}

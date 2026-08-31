@@ -2,11 +2,6 @@ import { Reveal } from "@/components/Reveal";
 import { BackgroundIcons } from "@/components/BackgroundIcons";
 import aboutImage from "@/assets/detail-basic-manicure.jpg";
 
-/**
- * Placeholder biography: everything here is already claimed elsewhere on the
- * site, so nothing new has to be true for it to hold. Swap it for Rebecca's own
- * words, and the photo for one of her.
- */
 export const About = () => {
   return (
     <section id="about" className="relative scroll-mt-24 overflow-hidden py-16 md:py-24">
@@ -31,13 +26,12 @@ export const About = () => {
               נעים להכיר, אני רבקה.
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              אני מניקוריסטית, ומלמדת את המקצוע אחת על אחת. בסלון אני עובדת עם לקוחות
-              קבועות על ידיים, רגליים, בנייה וגבות, ובקורס אני מעבירה את אותה שיטה הלאה:
-              עבודה נקייה, בטוחה, ותוצאה שנשארת יפה לאורך זמן.
+              מעל עשור אני בעולם הציפורניים, מקבלת לקוחות במכון ומלמדת את המקצוע אחת על
+              אחת. בקורס אני מעבירה בדיוק את הטכניקה ואת שיטת העבודה שאיתן אני עובדת כל יום.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              אני מאמינה שהבסיס הוא מה שעושה את ההבדל. לפני כל טכניקה מתקדמת צריך להבין
-              על מה עובדים ואיך עובדים נכון, וזה מה שאני מקפידה עליו בכל טיפול ובכל מפגש.
+              טכניקה נכונה לא לומדים מרחוק. יושבת לידך, מתקנת בזמן אמת, ומלווה אותך עד שאת
+              מרגישה בטוחה מול כל לקוחה.
             </p>
             <p className="text-sm text-muted-foreground">
               את העבודות שלי אפשר לראות באינסטגרם{" "}

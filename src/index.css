@@ -251,11 +251,11 @@ shadows and a two-stop gradient on the primary surfaces.
 
   /* Small caps label above a section title. */
   .eyebrow {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-    font-size: 0.6875rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: hsl(var(--muted-foreground));
+    /* Same face as the rest of the page: the monospace treatment read as generic
+       and the uppercase does nothing in Hebrew. */
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--primary));
   }
 
   .animate-fade-in-up {
