@@ -4,8 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
-  // Served from https://mendidou.github.io/modern-course-launch/
-  base: "/modern-course-launch/",
+  // Served from https://rbknails.co.il at the domain root.
+  base: "/",
   server: {
     host: "::",
     port: 8080,
