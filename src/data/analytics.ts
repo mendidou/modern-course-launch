@@ -9,4 +9,4 @@
  * GA4: Admin > Data streams, looks like G-XXXXXXXXXX.
  */
 export const META_PIXEL_ID = "2599212500548753";
-export const GA4_ID = "";
+export const GA4_ID = "G-Y9WDYXHZ06";
