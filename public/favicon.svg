@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Badge mark, reduced to the nail silhouette: the "RBK NAILS" lettering of the
+       full badge turns to mush below 48px, and a favicon is mostly seen at 16-32. -->
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="hsl(28 82% 36%)" />
-      <stop offset="100%" stop-color="hsl(36 88% 37%)" />
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b8781f"/>
+      <stop offset="1" stop-color="#e3ad45"/>
+    </linearGradient>
+    <linearGradient id="nail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8ee"/>
+      <stop offset="1" stop-color="#f2ddbc"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="hsl(36 45% 96%)" />
-  <path d="M32 18c7 0 12 5 12 12v10c0 7-5 12-12 12s-12-5-12-12V30c0-7 5-12 12-12z" fill="url(#g)" />
-  <path d="M32 18c7 0 12 5 12 12H20c0-7 5-12 12-12z" fill="hsl(36 45% 98%)" opacity=".55" />
+  <rect width="200" height="200" rx="46" fill="url(#bg)"/>
+  <path d="M100 44c22 0 36 15.5 36 37.5v40c0 23-15.5 40-36 40s-36-17-36-40v-40C64 59.5 78 44 100 44z" fill="url(#nail)"/>
+  <path d="M100 44c22 0 36 15.5 36 37.5v9c-10.5-7.5-23-11-36-11s-25.5 3.5-36 11v-9C64 59.5 78 44 100 44z" fill="#ffffff" opacity=".6"/>
 </svg>
