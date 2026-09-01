@@ -9,6 +9,7 @@ import { About } from "@/components/About";
 import { Reveal } from "@/components/Reveal";
 import { BackgroundIcons } from "@/components/BackgroundIcons";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SocialLinks } from "@/components/SocialLinks";
 import { courses } from "@/data/courses";
 import { whatsappLink } from "@/data/contact";
 import heroImage from "@/assets/hero-nails.jpg";
@@ -306,17 +307,9 @@ const Index = () => {
 
       <footer className="py-10">
         <div className="container mx-auto max-w-6xl px-4" dir="rtl">
-          <div className="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm text-muted-foreground">
-            <p>© 2024 כל הזכויות שמורות</p>
-            <a
-              href="https://www.instagram.com/rbknails/"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-foreground transition-colors"
-              dir="ltr"
-            >
-              @rbknails
-            </a>
+          <div className="flex flex-col items-center gap-6 text-sm text-muted-foreground sm:flex-row-reverse sm:justify-between">
+            <SocialLinks className="flex gap-3" />
+            <p>© 2026 rbknails · כל הזכויות שמורות</p>
           </div>
         </div>
       </footer>
