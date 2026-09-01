@@ -8,5 +8,5 @@
  * Meta Pixel: Events Manager > Datasets, a 15-16 digit number.
  * GA4: Admin > Data streams, looks like G-XXXXXXXXXX.
  */
-export const META_PIXEL_ID = "1591648492439511";
+export const META_PIXEL_ID = "1460293326123088";
 export const GA4_ID = "";
