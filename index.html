@@ -17,7 +17,46 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="he_IL" />
+    <meta property="og:url" content="https://rbknails.co.il/" />
     <meta name="theme-color" content="#f7f1e8" />
+    <link rel="canonical" href="https://rbknails.co.il/" />
+
+    <!-- Structured data. Kept in the static HTML because Google reads the markup
+         before running the app, so anything React renders would be missed. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BeautySalon",
+            "@id": "https://rbknails.co.il/#business",
+            "name": "rbknails",
+            "url": "https://rbknails.co.il/",
+            "telephone": "+972545817707",
+            "image": "https://rbknails.co.il/favicon.svg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "כפר יונה",
+              "addressCountry": "IL"
+            },
+            "sameAs": ["https://www.instagram.com/rbknails/"]
+          },
+          {
+            "@type": "Course",
+            "name": "קורס מניקור ג'ל מתחילות",
+            "url": "https://rbknails.co.il/course/1",
+            "description": "קורס פרטי אחד על אחד במניקור ולק ג'ל למתחילות: אנטומיה של הציפורן, היגיינה ועיקור, טכניקות עבודה ותרגול מעשי על מודליסטית.",
+            "inLanguage": "he",
+            "provider": { "@id": "https://rbknails.co.il/#business" },
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "courseWorkload": "PT4H"
+            }
+          }
+        ]
+      }
+    </script>
 
     <!-- Wordmark only, so a single weight of a single family. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
